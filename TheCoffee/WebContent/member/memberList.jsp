@@ -34,7 +34,7 @@
  <c:if test="${count>0}">
    <table widht="700" border="1">
      <tr bgcolor="ivory">
-       <td>글번호</td>
+       <td>아이디</td>
        <td>글제목</td>
        <td>작성자</td>
        <td>작성일</td>
