@@ -3,7 +3,7 @@ import javax.servlet.http.*;
 
 public interface CommandAction {
 
-	//ë©”ì„œë“œ ì„ ì–¸ë§Œ í•œë‹¤
+	//¸Þ¼­µå ¼±¾ð¸¸ ÇÑ´Ù
 	public String requestPro(HttpServletRequest request,
 			HttpServletResponse response) throws Throwable;
 }//interface-end

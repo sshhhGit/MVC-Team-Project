@@ -7,22 +7,22 @@ import java.util.*;//Map,HashMap
 import command.CommandAction;
 //import action.board.ListAction;
 
-//í´ë¼ì´ì–¸íŠ¸ ìš”ì²­ì„ ë°›ëŠ”ë‹¤
-//ì»¨íŠ¸ë¡¤ëŸ¬ëŠ” ì„œì¦ë¦¿ìœ¼ë¡œ ë§Œë“ ë‹¤ 
-//ì»¨íŠ¸ë¡¤ëŸ¬ëŠ” javaë¬¸ë²•,servletë¬¸ë²•ìœ¼ë¡œ ì´ë£¨ì–´ì§„ë‹¤ 
+//Å¬¶óÀÌ¾ğÆ® ¿äÃ»À» ¹Ş´Â´Ù
+//ÄÁÆ®·Ñ·¯´Â ¼­Áñ¸´À¸·Î ¸¸µç´Ù 
+//ÄÁÆ®·Ñ·¯´Â java¹®¹ı,servlet¹®¹ıÀ¸·Î ÀÌ·ç¾îÁø´Ù 
 
-//ì»¨íŠ¸ë¡¤ëŸ¬ ì‘ì„±
+//ÄÁÆ®·Ñ·¯ ÀÛ¼º
 public class DispatcherController extends HttpServlet{
 
 	  private Map map=new HashMap();
 	  // key value
-	  // uri  Actionê°ì²´
+	  // uri  Action°´Ã¼
 	  
-	  //init() : ì´ˆê¸°í™” ì‘ì—…
+	  //init() : ÃÊ±âÈ­ ÀÛ¾÷
 	  public void init(ServletConfig config) throws ServletException{
 		  String path=config.getServletContext().getRealPath("/");
 		  String ffile=path+config.getInitParameter("proFile");//web.xml
-		  Properties pro=new Properties();//ê°ì²´ìƒì„±
+		  Properties pro=new Properties();//°´Ã¼»ı¼º
 		  
 		  FileInputStream f=null;
 		  
@@ -31,7 +31,7 @@ public class DispatcherController extends HttpServlet{
 			  pro.load(f);/////******************
 			  
 		  }catch(Exception ex1){
-			  System.out.println("íŒŒì¼ ì½ê¸° ì—ëŸ¬ "+ex1);
+			  System.out.println("ÆÄÀÏ ÀĞ±â ¿¡·¯ "+ex1);
 		  }finally{
 			  try{
 				  if(f != null) { f.close();}
@@ -40,20 +40,20 @@ public class DispatcherController extends HttpServlet{
 		  
 		  Iterator keys=pro.keySet().iterator();//******
 		  
-		  while(keys.hasNext()){//keyì¡´ì¬í•˜ëŠ” ë™ì•ˆ ë°˜ë³µ
+		  while(keys.hasNext()){//keyÁ¸ÀçÇÏ´Â µ¿¾È ¹İº¹
 			  
 			  String key=(String)keys.next();//  /board/list.do
-			  String className=pro.getProperty(key);//keyí•´ë‹¹í•˜ëŠ” ê°’, action.board.ListAction
+			  String className=pro.getProperty(key);//keyÇØ´çÇÏ´Â °ª, action.board.ListAction
 		  
 			  try{
 				  //Class.forName(DRIVER)
-				  Class commandClass=Class.forName(className);//í´ë˜ìŠ¤ë¡œ ë§Œë“¤ì—ˆë‹¤
-				  Object commandObject=commandClass.newInstance();//í´ë˜ìŠ¤ë¥¼ ê°ì²´ë¡œ ë§Œë“¤ì—ˆë‹¤
+				  Class commandClass=Class.forName(className);//Å¬·¡½º·Î ¸¸µé¾ú´Ù
+				  Object commandObject=commandClass.newInstance();//Å¬·¡½º¸¦ °´Ã¼·Î ¸¸µé¾ú´Ù
 				  
-				  map.put(key, commandObject);//mapì €ì¥
+				  map.put(key, commandObject);//mapÀúÀå
 				  
 			  }catch(Exception ex3){
-				  System.out.println("properties íŒŒì¼ ë‚´ìš©ì„ í´ë˜ìŠ¤ ê°ì²´ë¡œ ë§Œë“œëŠ” ì¤‘ ì˜ˆì™¸ ë°œìƒ:"+ex3);
+				  System.out.println("properties ÆÄÀÏ ³»¿ëÀ» Å¬·¡½º °´Ã¼·Î ¸¸µå´Â Áß ¿¹¿Ü ¹ß»ı:"+ex3);
 			  }
 		  }//while-end
 		  
@@ -62,41 +62,41 @@ public class DispatcherController extends HttpServlet{
 	  //doGet()
 	  public void doGet(HttpServletRequest request,HttpServletResponse response)
 	   throws IOException,ServletException{
-		reqPro(request,response);//ë©”ì„œë“œ
+		reqPro(request,response);//¸Ş¼­µå
 	  }
 	  
 	  //doPost()
 	  public void doPost(HttpServletRequest request,HttpServletResponse response)
 		throws IOException,ServletException{
-		reqPro(request,response);//ë©”ì„œë“œ
+		reqPro(request,response);//¸Ş¼­µå
 	  }
 	  
-	  //ì‚¬ìš©ì ì •ì˜ ë©”ì„œë“œ,í´ë¼ì´ì–¸íŠ¸ ìš”ì²­ì„ ì²˜ë¦¬ í•˜ëŠ” ê³³ 
+	  //»ç¿ëÀÚ Á¤ÀÇ ¸Ş¼­µå,Å¬¶óÀÌ¾ğÆ® ¿äÃ»À» Ã³¸® ÇÏ´Â °÷ 
 	  //reqPro()
 	  private void reqPro(HttpServletRequest request,HttpServletResponse response)
 	  throws IOException,ServletException{
 		  
-		  String view="";//jsp(ë·°)ë„£ì„ ë³€ìˆ˜   
+		  String view="";//jsp(ºä)³ÖÀ» º¯¼ö   
 		  
-		  CommandAction commandAction=null;//ì¸í„°í˜ì´ìŠ¤ë¡œ Actioní´ë˜ìŠ¤ì²˜ë¦¬í•˜ê¸° ìœ„í•´ ë³€ìˆ˜ ì„ ì–¸ 
+		  CommandAction commandAction=null;//ÀÎÅÍÆäÀÌ½º·Î ActionÅ¬·¡½ºÃ³¸®ÇÏ±â À§ÇØ º¯¼ö ¼±¾ğ 
 		  
 		  try{
-			  String uri=request.getRequestURI();// uri=> /í”„ë¡œì íŠ¸ëª…/ch19/list.do
+			  String uri=request.getRequestURI();// uri=> /ÇÁ·ÎÁ§Æ®¸í/ch19/list.do
 			  
 			  if(uri.indexOf(request.getContextPath())==0){
 				  uri=uri.substring(request.getContextPath().length());//=> /ch19/list.do
 			  }//if-end
 			  
-			  commandAction=(CommandAction)map.get(uri);//==>/ch19/list.do í‚¤ì— í•´ë‹¹í•˜ëŠ” ê°’(ê°ì²´)ì„ ì–»ëŠ”ë‹¤
-		 	  view=commandAction.requestPro(request, response);//Actionì˜ ë©”ì„œë“œ í˜¸ì¶œí•˜ì—¬, view(jsp)ë°›ëŠ”ë‹¤
+			  commandAction=(CommandAction)map.get(uri);//==>/ch19/list.do Å°¿¡ ÇØ´çÇÏ´Â °ª(°´Ã¼)À» ¾ò´Â´Ù
+		 	  view=commandAction.requestPro(request, response);//ActionÀÇ ¸Ş¼­µå È£ÃâÇÏ¿©, view(jsp)¹Ş´Â´Ù
 		 	  
 		  }catch(Throwable ex5){
-			  System.out.println("reqPro() ì˜ˆì™¸ ë°œìƒ :"+ex5);
+			  System.out.println("reqPro() ¿¹¿Ü ¹ß»ı :"+ex5);
 		  }
 		  
-		  request.setAttribute("view", view);//JSPë¡œ í¬ì›Œë”©í•´ì„œ ì‚¬ìš©í•  viewì´ë‹¤
+		  request.setAttribute("view", view);//JSP·Î Æ÷¿öµùÇØ¼­ »ç¿ëÇÒ viewÀÌ´Ù
 		  
 		  RequestDispatcher rd=request.getRequestDispatcher("/template/template.jsp");
-		  rd.forward(request, response);//JSPë¡œ í¬ì›Œë”© 
+		  rd.forward(request, response);//JSP·Î Æ÷¿öµù 
 	  }//reqPro()-end
 }//class-end
