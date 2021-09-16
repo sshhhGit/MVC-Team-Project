@@ -8,9 +8,72 @@
 <title>Main</title>
 <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+<!-- CSS 시작 -->
+<link rel="stylesheet" href="http://www.megacoffee.me/theme/basic/css/default.css">
+<!-- CSS 끝  -->
 </head>
 <body>
+
+<!-- 팝업레이어 시작 { -->
+<div id="hd_pop">
+    <h2>팝업레이어 알림</h2>
+
+
+    <div id="hd_pops_1" class="hd_pops" style="top:0px;left:555px">
+        <div class="hd_pops_con" style="width:300px;height:413px">
+            <p><a href=""><img src="../imgs/pop3.png"  /></a><br style="clear:both;" /> </p><p><br style="clear:both;" /> </p><p> </p><a href=""> </a><p> </p><p><a href=""> </a></p><p><a href=""> </a></p><p><a href=""> </a></p><p><a href=> </a></p><p><a href=""> </a></p><p><a href=""> </a></p><p> </p>       </div>
+        <div class="hd_pops_footer">
+            <button class="hd_pops_reject hd_pops_1 24"><strong>24</strong>시간 동안 다시 열람하지 않습니다.</button>
+            <button class="hd_pops_close hd_pops_1">닫기</button>
+        </div>
+    </div>
+
+    <div id="hd_pops_11" class="hd_pops" style="top:0px;left:200px">
+        <div class="hd_pops_con" style="width:300px;height:413px">
+            <a href=""><img src="../imgs/pop2.png"  /><br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" /></a>        </div>
+        <div class="hd_pops_footer">
+            <button class="hd_pops_reject hd_pops_11 24"><strong>24</strong>시간 동안 다시 열람하지 않습니다.</button>
+            <button class="hd_pops_close hd_pops_11">닫기</button>
+        </div>
+    </div>
+
+    <div id="hd_pops_13" class="hd_pops" style="top:0px;left:-155px">
+        <div class="hd_pops_con" style="width:300px;height:413px">
+            <a href=""></a><a href=""><img src="../imgs/pop1.png" /><br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" /></a>        </div>
+        <div class="hd_pops_footer">
+            <button class="hd_pops_reject hd_pops_13 24"><strong>24</strong>시간 동안 다시 열람하지 않습니다.</button>
+            <button class="hd_pops_close hd_pops_13">닫기</button>
+        </div>
+    </div>
+
+    <div id="hd_pops_16" class="hd_pops" style="top:0px;left:910px">
+        <div class="hd_pops_con" style="width:360px;height:413px">
+            <a href=""><img src="../imgs/pop4.png" /><br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" /> </a>       </div>
+        <div class="hd_pops_footer">
+            <button class="hd_pops_reject hd_pops_16 24"><strong>24</strong>시간 동안 다시 열람하지 않습니다.</button>
+            <button class="hd_pops_close hd_pops_16">닫기</button>
+        </div>
+    </div>
+</div>
+
+<script>
+$(function() {
+    $(".hd_pops_reject").click(function() {
+        var id = $(this).attr('class').split(' ');
+        var ck_name = id[1];
+        var exp_time = parseInt(id[2]);
+        $("#"+id[1]).css("display", "none");
+        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+    });
+    $('.hd_pops_close').click(function() {
+        var idb = $(this).attr('class').split(' ');
+        $('#'+idb[1]).css('display','none');
+    });
+    $("#hd").css("z-index", 1000);
+});
+</script>
+<!-- } 팝업레이어 끝 -->
+
 <c:if test="${empty sessionScope.userId }">
   <form name="loginForm" method="post" action="${ctxpath }/member/loginPro.do" onsubmit="return loginCheck()">
 <%--     <table width="100%" border="1">

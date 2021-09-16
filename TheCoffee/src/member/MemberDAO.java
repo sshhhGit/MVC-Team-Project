@@ -180,36 +180,101 @@ public class MemberDAO {
 	//-------------------------
 	//DB정보 수정
 	//-------------------------
-	public void updateMember(MemberDTO dto) throws Exception {
+	public int updateMember(MemberDTO dto, String id, String pw) throws Exception {
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		PreparedStatement pstmt2 = null;
+		ResultSet rs = null;
+		
+		String dbPw = "";
+		int x = -100;
 		
 		try {
 			con = getConnection();
-			String sql = "update member set pw=?,name=?,email=?,tel=?,zipcode=?,addr=?,addr2=? where id=?";
+			pstmt = con.prepareStatement("select pw from member where id=?");
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
 			
-			pstmt = con.prepareStatement(sql);
-			//'?'값 채우기
-			pstmt.setString(1, dto.getPw());
-			pstmt.setString(2, dto.getName());
-			pstmt.setString(3, dto.getEmail());
-			pstmt.setString(4, dto.getTel());
-			pstmt.setString(5, dto.getZipcode());
-			pstmt.setString(6, dto.getAddr());
-			pstmt.setString(7, dto.getAddr2());
-			pstmt.setString(8, dto.getId());
-			
-			pstmt.executeUpdate(); //쿼리 수행 insert, update, delete 일 때 수행
+			if(rs.next()){
+				dbPw = rs.getString("pw");
+				if(pw.equals(dbPw)){  //입력한 암호와 db암호가 같으면 삭제
+					pstmt2 = con.prepareStatement("update member set name=?,email=?,tel=?,zipcode=?,addr=?,addr2=? where id=?");
+					//'?'값 채우기
+					
+					pstmt2.setString(1, dto.getName());
+					pstmt2.setString(2, dto.getEmail());
+					pstmt2.setString(3, dto.getTel());
+					pstmt2.setString(4, dto.getZipcode());
+					pstmt2.setString(5, dto.getAddr());
+					pstmt2.setString(6, dto.getAddr2());
+					pstmt2.setString(7, dto.getId());
+					
+					pstmt2.executeUpdate(); //쿼리 수행 insert, update, delete 일 때 수행
+					x = 1;  //암호 일치
+				}else{
+					x = -1; //암호 불일치
+				}
+			}else{
+				x = 0; 		//ID X
+			}
 			
 		} catch (Exception ex1) {
 			System.out.println("updateMember() 예외 : " + ex1);
 		} finally{
 			try {
+				if (rs != null) {rs.close();}
+				if (pstmt2 != null) {pstmt2.close();}
 				if (pstmt != null) {pstmt.close();}
 				if (con != null) {con.close();}
-			} catch (Exception e2) {}
+			} catch (Exception ex2) {}
 		}//finally-end
+		return x;
 	}//updateMember()-end
+	public int updatePassword(String newPW, String id, String oldPw) throws Exception {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		PreparedStatement pstmt2 = null;
+		ResultSet rs = null;
+		
+		String dbPw = "";
+		int x = -100;
+		
+		try {
+			con = getConnection();
+			pstmt = con.prepareStatement("select pw from member where id=?");
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()){
+				dbPw = rs.getString("pw");
+				if(oldPw.equals(dbPw)){  //입력한 암호와 db암호가 같으면 삭제
+					pstmt2 = con.prepareStatement("update member set pw=? where id=?");
+					//'?'값 채우기
+					
+					pstmt2.setString(1,newPW);
+					pstmt2.setString(2,id);
+					
+					pstmt2.executeUpdate(); //쿼리 수행 insert, update, delete 일 때 수행
+					x = 1;  //암호변경돔
+				}else{
+					x = -1; //암호 불일치
+				}
+			}else{
+				x = 0; 		//ID X
+			}
+			
+		} catch (Exception ex1) {
+			System.out.println("updatePassword() 예외 : " + ex1);
+		} finally{
+			try {
+				if (rs != null) {rs.close();}
+				if (pstmt2 != null) {pstmt2.close();}
+				if (pstmt != null) {pstmt.close();}
+				if (con != null) {con.close();}
+			} catch (Exception ex2) {}
+		}//finally-end
+		return x;
+	}//updatePassword()-end
 	//-------------------------
 	//회원탈퇴
 	//-------------------------
@@ -316,8 +381,9 @@ public class MemberDAO {
 				dto.setTel(rs.getString("tel"));
 				
 				dto.setZipcode(rs.getString("zipcode"));
-				dto.setAddr(rs.getString("Addr"));
-				dto.setAddr2(rs.getString("Addr2"));
+				dto.setAddr(rs.getString("addr"));
+				dto.setAddr2(rs.getString("addr2"));
+				dto.setRegdate(rs.getString("regdate"));
                 
                 list.add(dto);
             }

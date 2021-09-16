@@ -15,14 +15,15 @@ public class ModifyProAction implements CommandAction{
 		
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
 		
 		//클라이언트가 보내준 데이터를 받아서 DTO에 저장
 		MemberDTO dto = new MemberDTO();
 		dto.setId(id);
-		dto.setPw(request.getParameter("pw"));
+		dto.setPw(pw);
 		dto.setName(request.getParameter("name"));
 		
-		String email = request.getParameter("email")+request.getParameter("eamil2");
+		String email = request.getParameter("email");
 		dto.setEmail(email);
 		
 		String tel = request.getParameter("tel")+request.getParameter("tel2")+request.getParameter("tel3");
@@ -33,9 +34,12 @@ public class ModifyProAction implements CommandAction{
 		dto.setAddr2(request.getParameter("addr2"));
 		
 		MemberDAO dao = MemberDAO.getInstance();
-		dao.updateMember(dto); //dao메서 호출, dto를 넘겨준다
 		
-		request.setAttribute("id", id);
+		dao.updateMember(dto, id, pw); //dao메서 호출, dto를 넘겨준다
+		
+		int check = dao.updateMember(dto, id, pw);
+		
+		request.setAttribute("check", check);
 		
 		return "/member/modifyPro.jsp";
 	}

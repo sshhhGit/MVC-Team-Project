@@ -5,13 +5,13 @@
 <html>
 <head>
 <style type="text/css">
-/* table {
-	width: 100%;
-} */
+table {
+    border-collapse: collapse;
+}
 </style>
 </head>
   <body>
-    <table border="1" height="100%" width="100%" cellspacing="0">
+    <table border="1" height="100%" width="100%">
       <tr>
         <td>
           <jsp:include page="/module/top.jsp" flush="false"></jsp:include>
@@ -24,7 +24,7 @@
           <jsp:include page="/module/admin.jsp" flush="false"></jsp:include>
         </c:if>
         <c:if test="${!empty sessionScope.userId and 'admin' ne sessionScope.userId}">
-          <jsp:include page="/module/logout.jsp" flush="false"></jsp:include>
+          <jsp:include page="/module/member.jsp" flush="false"></jsp:include>
         </c:if>
         </td>
       </tr>

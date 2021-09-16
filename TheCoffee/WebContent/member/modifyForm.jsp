@@ -21,24 +21,37 @@
 <script type="text/javascript" src="script.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript">
-function pwCheck() {
-	var ff = eval("document.inputForm");
+function modifyCheck() {
+	var ff = eval("document.modifyForm");
 	
 	if(ff.pw.value==''){
 		alert("암호를 입력하세요");
 		ff.pw.focus();
 		return false;
 	}
-	if(ff.pw2.value==''){
-		alert("암호확인을 입력하세요");
-		ff.pw2.focus();
+	if(ff.name.value==''){
+		alert("이름을 입력하세요");
+		ff.name.focus();
 		return false;
 	}
-	if(ff.pw.value!=ff.pw2.value){
-		alert("암호확인이 일치하지않습니다");
-		ff.pw.value="";
-		ff.pw2.value="";
-		ff.pw.focus();
+	if(ff.email.value==''){
+		alert("이메일 입력하세요");
+		ff.email.focus();
+		return false;
+	}
+	if(ff.tel.value==''){
+		alert("전화번호를 입력하세요");
+		ff.tel.focus();
+		return false;
+	}
+	if(ff.zipcode.value==''){
+		alert("주소를 입력하세요");
+		ff.zipcode.focus();
+		return false;
+	}
+	if(ff.addr2.value==''){
+		alert("상세주소를 입력하세요");
+		ff.addr2.focus();
 		return false;
 	}
 	return true;
@@ -47,7 +60,7 @@ function pwCheck() {
 </head>
 <body>
 <h2>내정보 수정</h2>
-<form action="${ctxpath}/member/modifyPro.do" name="inputForm" method="post" onsubmit="return pwCheck()">
+<form action="${ctxpath}/member/modifyPro.do" name="modifyForm" method="post" onsubmit="return modifyCheck()">
   <table border="1">
     <tr>
       <td>ID</td>
@@ -60,12 +73,6 @@ function pwCheck() {
       <td>암호</td>
       <td>
         <input type="password" name="pw" id="pw" size="15">
-      </td>
-    </tr>
-        <tr>
-      <td>암호확인</td>
-      <td>
-        <input type="password" name="pw2" id="pw2" size="15">
       </td>
     </tr>
     <tr>
@@ -111,8 +118,7 @@ function pwCheck() {
     </tr>
     <tr>
       <td colspan="2" align="center">
-        <input type="submit" value="내정보 수정">
-        <input type="reset" value="다시입력">
+        <input type="submit" value="변경하기">
         <input type="button" value="취소" onclick="location='${ctxpath}/member/main.do'">
       </td>
     </tr>
