@@ -31,8 +31,8 @@ public class ListAction implements CommandAction {
 
 		int count = 0; //√—±€∞πºˆ
 		FaqDAO dao = FaqDAO.getInstance();
-		count = dao.getFaqCount(category, searchText);
-		count = 2;				
+		count = dao.getFaqCount(category, searchText);		
+		
 		if(count > 0){//±€¿Ã ¿÷¿∏∏È
 			faqList = new ArrayList<FaqDTO>();
 			faqList = dao.getList(category, searchText);			

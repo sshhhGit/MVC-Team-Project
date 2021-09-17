@@ -15,7 +15,7 @@ public class UpdateFormAction implements CommandAction {
 			HttpServletResponse response) throws Throwable {
 		
 		int num = Integer.parseInt(request.getParameter("num"));
-		System.out.println("num : " + num);
+//		System.out.println("num : " + num);
 //		String pageNum = request.getParameter("pageNum");
 		
 		QnaDAO dao = QnaDAO.getInstance(); // dao °´Ã¼ ¾ò±â

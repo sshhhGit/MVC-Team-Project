@@ -1,0 +1,10 @@
+
+drop table notice;
+
+create table notice(
+notice_no int not null primary key auto_increment,
+notice_title varchar(100) not null,
+notice_content text not null,
+notice_date datetime,
+notice_count int default 0
+);

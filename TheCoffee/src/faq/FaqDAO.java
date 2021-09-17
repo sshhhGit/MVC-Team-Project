@@ -88,11 +88,12 @@ public class FaqDAO {
 		try {
 			con = getConnection();
 			
+			category = '%' + category + '%';
 			searchText = '%' + searchText + '%';
 			
 			sql = "select @ROWNUM:=@ROWNUM+1 AS rno, f.* "
 				+ " from ( SELECT @ROWNUM := 0) r, faq f "
-				+ " where category like ? and subject like ? or content like ? order by num desc";			
+				+ " where category like ? and (subject like ? or content like ?) order by num desc";			
 			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, category);
@@ -138,10 +139,13 @@ public class FaqDAO {
 	public int getFaqCount(String category, String searchText) throws Exception {
 		int cnt = -1;
 		
-		try {
+		try {			
 			con = getConnection();
 			sql = "select count(*) from faq"
-					+ " where category like ? and subject like ? or content like ? ";
+					+ " where category like ? and (subject like ? or content like ?)";
+			
+			searchText = '%' + searchText + '%';
+			category = '%' + category + '%';
 			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, category);

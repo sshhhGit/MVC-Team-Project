@@ -24,7 +24,7 @@ public class DeleteProAction implements CommandAction {
 		
 		
 		QnaDAO dao = QnaDAO.getInstance(); // dao 객체 얻기
-		int check = dao.deleteQna(num, user_id, pw); // dao 메소드 호출, 정수값 받기
+		int check = dao.deleteQna_Q(num, user_id, pw); // dao 메소드 호출, 정수값 받기
 		// x==1 정상적으로 삭제, x==0 암호틀림 삭제실패
 		
 		// 뷰에서 사용할 속성 지정

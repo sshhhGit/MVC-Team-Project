@@ -2,39 +2,51 @@
 <%@ include file="header.jsp" %>
 <%--list.jsp --%>
 <fmt:requestEncoding value="UTF-8"/>
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>list.jsp</title>
-
 <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 <body>
+<%-- body부분 --%>
 <%
-session.setAttribute("admin_id", "admin1"); // 세션에 등록(관리자)
+// session.setAttribute("admin_id", "admin1"); // 세션에 등록(관리자)
 session.setAttribute("user_id", "user1"); // 세션에 등록(유저)
 %>
-<%-- body부분 --%>
 <br>
- <h2>Q&A(전체글:${count})</h2>
- <table width="50%" cellpadding="1" cellspacing="0">
+ <h2>Q&A&nbsp;&nbsp;(전체글:${count})</h2>
+ <table width="50%" cellpadding="0" cellspacing="0">
+   <tr>
+    <td><b>현재 session : 
+    <%
+     if (session.getAttribute("user_id") != null) {
+    	 out.print(session.getAttribute("user_id"));
+     } else if (session.getAttribute("admin_id") != null) {
+    	 out.print(session.getAttribute("admin_id"));
+     } else {
+    	 out.print("비회원상태");
+     }
+    	%>
+    	</b>
+    </td>
+   </tr>
+   
    <tr>
     <td align="right">
      <%
-      if (session.getAttribute("user_id") != null || session.getAttribute("admin_id") != null) {
+      if (session.getAttribute("user_id") != null) {
     	  %>
-        <a href="${ctxpath}/qna/writeForm.do">글쓰기</a>
+        <input type="button" value="질문작성" onclick="location='${ctxpath}/qna/writeForm.do'"><br><br>
     	  <%
       }
      %>
     </td>
    </tr>
  </table>
- 
+ <br>
  <c:if test="${count==null}">
    글이 없다. null이다.
  </c:if>
@@ -44,35 +56,31 @@ session.setAttribute("user_id", "user1"); // 세션에 등록(유저)
  </c:if>
  
  <c:if test="${count>0}">
-   <table width="700" border="1">
+   <table width="700" border="1" cellpadding="10" cellspacing="0">
      <tr bgcolor="ivory">
-       <td width="20%">글번호</td>
-       <td>질문내용</td>
+       <td align="center" width="13%"><b>글번호</b></td>
+       <td align="center"><b>질문</b></td>
      </tr>
      
      <c:forEach var="dto" items="${qnaList}">
        <tr>
-       <!-- 글번호 -->
-        <td>
+        <%-- 글번호 --%>
+        <td align="center">
           <c:out value="${dto.num}"/>
         </td>
         
-        
-        <!-- 글제목 -->
-        <td>
-         <!-- 제목을 클릭하면 글내용로 가기  -->
-         <!-- content.do -->
-         <a href="${ctxpath}/qna/content.do?num=${dto.num}">
+        <td align="left">
+         <%-- 글내용 --%>
+         <a href="${ctxpath}/qna/content.do?num=${dto.num}&current_user_id=<%=session.getAttribute("user_id")%>&current_admin_id=<%=session.getAttribute("admin_id")%>">
            ${dto.user_content}
          </a>
         </td>
-         
        </tr>
      </c:forEach>
    </table>
  </c:if>
+ 
  <br><br><br>
-  
  
 </body>
 </html>

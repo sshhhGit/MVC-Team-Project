@@ -2,12 +2,15 @@ package product;
 
 import java.sql.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.sql.*;//DataSource
 
 import java.util.*;
 
 import javax.naming.*;//lookup
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import product.ProductDTO;
 
@@ -164,5 +167,65 @@ public class ProductDAO {
 
 		return dto;
 	}//getDetail() end
+	
+	//-------------------------------------------------------
+	// 상품등록 , insert, 그림파일 업로드  
+	//-------------------------------------------------------------
+	public boolean insertProduct(ProductDTO dto,HttpServletRequest request){
+		boolean re=false;
+		//Connection con=null;
+		//PreparedStatement pstmt=null;
+
+		//JSP경우 :실제경로 얻기 , 그림 등록 하기 위해서 , ★★★★★★★★★그림 등록하기 우해서
+		//<%= config.getServletContext().getRealPath("/")%> : 이것을 사용하세요 //아래와 결과 같으나 이게 더 정확
+		//<%= application.getRealPath("/")%>
+
+		//서블릿에서 실제 경로 얻기 
+		//request.getRealPath("/");
+		//request.getServletConext().getRealPath("/"); //이것을 사용하세요
+
+		//그림을 웹으로 출력 할때 ★★★★★★★★★
+		//<%= request.getContextPath()%>
+		//프로젝트이름=컨텍스트이름이다 
+
+		try{
+			con=getConnection();
+			 
+			String sql="";
+			sql="insert into product(name_ko,name_eng,subject,content,image,hc_code,event_code) values(?,?,?,?,?,?,?)";
+
+			pstmt=con.prepareStatement(sql);//생성시 인자 들어간다
+
+			//◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆ 중요
+			//클라이언트 데이터 받을때 request로 하면 안된다
+			//MultipartRequest mul 로 데이터를 받아야 한다
+
+			//?값 채우기
+			pstmt.setString(1, dto.getName_ko());
+			pstmt.setString(2, dto.getName_eng());
+			pstmt.setString(3, dto.getSubject());
+			pstmt.setString(4, dto.getContent());
+			pstmt.setString(5, dto.getImage());
+			pstmt.setString(6, dto.getHc_code());
+			pstmt.setString(7, dto.getEvent_code());
+
+			int count = pstmt.executeUpdate();//쿼리 수행, insert 1개 되면
+
+			if(count==1){
+				re=true;
+			}
+
+		}catch(Exception ex1){
+			System.out.println("insertProduct()예외 :"+ex1);
+		}finally{
+			try{
+				//if(rs!=null){rs.close();}
+				if(pstmt!=null){pstmt.close();}
+				if(con!=null){con.close();}
+			}catch(Exception ex2){}
+		}//finally-end
+
+		return re;
+	}//insertProduct()-end
 
 }//class-end

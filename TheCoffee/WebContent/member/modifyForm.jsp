@@ -59,7 +59,7 @@ function modifyCheck() {
 </script>
 </head>
 <body>
-<h2>내정보 수정</h2>
+<h2>개인정보 변경</h2>
 <form action="${ctxpath}/member/modifyPro.do" name="modifyForm" method="post" onsubmit="return modifyCheck()">
   <table border="1">
     <tr>

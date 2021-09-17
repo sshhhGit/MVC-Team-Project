@@ -9,9 +9,10 @@ table {
     border-collapse: collapse;
 }
 </style>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
   <body>
-    <table border="1" height="100%" width="100%">
+    <table border="0" height="100%" width="100%">
       <tr>
         <td>
           <jsp:include page="/module/top.jsp" flush="false"></jsp:include>
@@ -37,7 +38,7 @@ table {
 	    </td>
       </tr>
       <tr bgcolor="#363636">
-        <td colspan="3" align="center" style="color:white"><%-- bottom.jsp --%>
+        <td colspan="3" align="center" style="color:white" height="150"><%-- bottom.jsp --%>
           <jsp:include page="/module/bottom.jsp"></jsp:include>
         </td>
       </tr>

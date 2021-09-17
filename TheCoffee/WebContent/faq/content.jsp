@@ -50,7 +50,12 @@ function deleteFaq() {
 		<td align="right">
 			<input type="hidden" name="num" id="num" value="${num}">
 			<input type="button" value="수정" onClick="location='${ctxpath}/faq/updateForm.do?num=${num}'">
-			<input type="button" value="삭제" onClick="deleteFaq()">
+			
+			<%--관리자인 경우 --%>
+			<c:if test="${'admin' eq sessionScope.userId }">	
+				<input type="button" value="삭제" onClick="deleteFaq()">
+			</c:if>
+			
 			<input type="button" value="목록" onClick="location='${ctxpath}/faq/list.do'">
 		</td>
 	</tr>

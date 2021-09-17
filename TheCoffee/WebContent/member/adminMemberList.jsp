@@ -14,15 +14,14 @@
 </head>
 <body>
 	<c:if test="${'admin' ne sessionScope.userId}">
-		<h2>관리자 권한이 필요합니다</h2>
+		<h1>관리자 권한이 필요합니다</h1>
 	</c:if>
 	<c:if test="${'admin' eq sessionScope.userId}">
-		<h2>회원정보</h2>
+		<h2>회원정보 목록</h2>
 		<table border="1">
 			<tr>
 				<td>번호</td>
 				<td>아이디</td>
-				<td>비밀번호</td>
 				<td>이름</td>
 				<td>이메일</td>
 				<td>전화</td>
@@ -30,14 +29,13 @@
 				<td>주소</td>
 				<td>상세주소</td>
 				<td>가입일</td>
-				<td>탈퇴</td>
+				<td><input type="button" value="탈퇴"></td>
 			</tr>
 			<c:set var="num" value="${1 }" />
 			<c:forEach items="${list }" var="dto" varStatus="i">
 				<tr>
 					<td>${num}</td>
 					<td>${dto.id}</td>
-					<td>${dto.pw}</td>
 					<td>${dto.name}</td>
 					<td>${dto.email}</td>
 					<td>${dto.tel}</td>

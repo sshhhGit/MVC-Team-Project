@@ -32,17 +32,36 @@ function check(){
 function listReload(){
 	//$('#category').val('');
 	$('#searchText').val('');
-	alert("listReload : " + $('#searchText').val());
+	
+	
+	document.searchForm.category.options[0].selected = "selected";
+	
+		
 	location.href="${ctxpath}/faq/list.do?category="+ $('#category').val() + "&searchText="+$('#searchText').val();
 	document.searchForm.submit();	//전송	
+}
+
+function init(){
+	//분류 콤보박스 : 화면로드 시 서버에서 받아온 값으로 선택해준다. 	
+	paramVal = "${category}";
+	
+	optCount = document.searchForm.category.options.length;
+	
+	for(i=0; i < optCount; i++) {
+		optVal = document.searchForm.category.options[i].value;
+	
+		if(paramVal == optVal){ //파라미터 값과 같으면 select 처리
+			document.searchForm.category.options[i].selected = "selected";
+		}
+	}
 }
 
 </script>
 
 </head>
-<body>
+<body onLoad="init()">
 
-<form name="searchForm" method="get"  onSubmit="return check()">
+<form name="searchForm" method="get" onSubmit="return check()">
 <table width="60%" height ="80" cellpadding="5">
 	<tr>
 		<td align="left">
@@ -52,6 +71,18 @@ function listReload(){
 		</td>
 
 		<td align="right">
+					
+			<%--관리자인 경우 --%>
+			<c:if test="${'admin' eq sessionScope.userId }">				
+				<a href="${ctxpath}/faq/inputForm.do">FAQ추가</a>	
+			</c:if>
+			&nbsp;&nbsp;
+			<a href="javascript:listReload()">새로고침</a>						
+		</td>				
+	</tr>
+	
+	<tr>
+		<td colspan="2" align="right">
 			분류 :
 			<select name="category" id="category">
 				<option value="" selected>전체</option>
@@ -65,17 +96,18 @@ function listReload(){
 			</select>			
 			검색어 :
 			<input type="text" name="searchText" id="searchText" value="${searchText}" size="20">
-			<input type="submit" value="검색">	
-			<a href="javascript:listReload()">새로고침</a>						
+			<input type="submit" value="검색">						
 		</td>
-				
 	</tr>
 </table>	
 
-<%--TODO : 권한 처리 : 관리자만 입력할 수 있도록 --%>
-
 <c:if test="${count == 0}">
-	FAQ에 등록된 글이 없습니다
+	<center>
+		<font size="+2" color="blue">
+			<br><br><br>FAQ에 등록된 글이 없습니다
+		</font>
+	</center>
+	
 </c:if>
 
 <c:if test="${count > 0}">

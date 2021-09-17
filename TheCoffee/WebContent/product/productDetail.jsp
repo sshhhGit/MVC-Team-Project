@@ -13,10 +13,13 @@
 <body>
 	<table width="700">
 		<tr>
+			<td colspan="1" height="50"></td>
+		</tr>
+		<tr>
 			<td>
 				<img alt="" src="${ctxpath}/imgs/${dto.image}" width="400">
 			</td>
-			<td>
+			<td align="left">
 				<table border="1">
 					<tr>
 						<td>${dto.name_ko }<img alt="" src="${ctxpath}/imgs/${dto.hc_code}.png" height="19"></td>
@@ -36,7 +39,7 @@
 		<tr>
 			<td colspan="2" align="center">
 				<input type="button" value="돌아가기" onclick="javascript:history.back()">
-				<input type="button" value="수정하기">
+				<%-- <input type="button" value="수정하기">--%>
 			</td>
 		</tr>
 	</table>

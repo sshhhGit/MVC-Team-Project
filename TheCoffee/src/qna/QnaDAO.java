@@ -11,6 +11,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import com.sun.xml.internal.ws.wsdl.writer.document.Types;
+
 
 
 public class QnaDAO {
@@ -87,11 +89,12 @@ public class QnaDAO {
 		PreparedStatement pstmt = null;
 		try {
 			con = getConnection();
-			pstmt = con.prepareStatement("insert into qna(admin_id,admin_content,admin_regdate) values(?,?,now())");
+			pstmt = con.prepareStatement("update qna set admin_id=?,admin_content=?,admin_regdate=now() where num=?");
 
 			// ?에 들어갈 값 채우기
 			pstmt.setString(1, dto.getAdmin_id());
 			pstmt.setString(2, dto.getAdmin_content());
+			pstmt.setInt(3, dto.getNum());
 
 			pstmt.executeUpdate(); // 쿼리수행 executeUpdate() : insert, update,delete
 
@@ -323,9 +326,9 @@ public class QnaDAO {
 	
 	
 	// -------------------
-	// DB 글수정
+	// DB 글수정(사용자)
 	// -------------------
-	public int updateQna(QnaDTO dto) throws Exception {
+	public int updateQna_Q(QnaDTO dto) throws Exception {
 		int x = -100;
 		try {
 			// 처리
@@ -346,7 +349,54 @@ public class QnaDAO {
 			}// if
 
 		} catch (Exception ex1) {
-			System.out.println("updateQna() 예외 :" + ex1);
+			System.out.println("updateQna_Q() 예외 :" + ex1);
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+			} catch (Exception ex2) {
+			}
+		}// finally-end
+
+		return x;
+	} // updateQna()-end
+
+	
+	
+	
+	
+	// -------------------
+	// DB 글수정(관리자)
+	// -------------------
+	public int updateQna_A(QnaDTO dto) throws Exception {
+		int x = -100;
+		try {
+			// 처리
+			con = getConnection();
+			pstmt = con.prepareStatement("select * from qna where num=?");
+			pstmt.setInt(1, dto.getNum());// ?값 채우기
+			rs = pstmt.executeQuery();// 쿼리 수행
+
+			if (rs.next()) {
+				sql = "update qna set admin_id=?,admin_content=? where num=?";
+
+				pstmt = con.prepareStatement(sql);// 생성시 인자 들어간다
+				pstmt.setString(1, dto.getAdmin_id());
+				pstmt.setString(2, dto.getAdmin_content());
+				pstmt.setInt(3, dto.getNum());
+				pstmt.executeUpdate();// 쿼리 수행
+				x = 1;
+			}// if
+
+		} catch (Exception ex1) {
+			System.out.println("updateQna_A() 예외 :" + ex1);
 		} finally {
 			try {
 				if (rs != null) {
@@ -367,10 +417,11 @@ public class QnaDAO {
 	
 	
 	
+	
 	// --------------------
-	// 글삭제
+	// 질문삭제(유저)
 	// --------------------
-	public int deleteQna(int num, String user_id, String pw) throws Exception {
+	public int deleteQna_Q(int num, String user_id, String pw) throws Exception {
 		String dbPw = "";
 		int x = -100;
 
@@ -398,7 +449,7 @@ public class QnaDAO {
 			System.out.println("x : " + x);
 
 		} catch (Exception ex1) {
-			System.out.println("deleteQna() 예외 :" + ex1);
+			System.out.println("deleteQna_A() 예외 :" + ex1);
 		} finally {
 			try {
 				if (rs != null) {
@@ -419,15 +470,168 @@ public class QnaDAO {
 	
 	
 	
+	// --------------------
+	// 답변삭제(관리자)
+	// --------------------
+	public int deleteQna_A(int num, String admin_id, String pw) throws Exception {
+		int x = -100;
+		String dbPw = "";
+
+		try {
+			// 처리
+			con = getConnection();
+			pstmt = con.prepareStatement("select pw from member where id=?");
+			pstmt.setString(1, admin_id);
+			rs = pstmt.executeQuery();// 쿼리 수행
+			
+			if (rs.next()) {
+				dbPw = rs.getString("pw");
+				System.out.println("dbpw : " + dbPw);
+				System.out.println("pw : " + pw);
+				if (dbPw.equals(pw)) {// 암호가 일치하면 글 삭제
+					pstmt = con.prepareStatement("update qna set admin_id=?,admin_content=?,admin_regdate=? where num=?");
+					pstmt.setNull(1, java.sql.Types.VARCHAR);
+					pstmt.setNull(2, java.sql.Types.VARCHAR);
+					pstmt.setNull(3, java.sql.Types.TIMESTAMP);
+					pstmt.setInt(4, num);
+					pstmt.executeUpdate();// 쿼리 수행
+
+					x = 1; // 정상적으로 삭제
+				} else {// 암호가 일치하지 않으면
+					x = 0; // 암호 틀림
+				}
+			}
+
+			System.out.println("deleteQna_A()의 x : " + x);
+
+		} catch (Exception ex1) {
+			System.out.println("deleteQna_A() 예외 :" + ex1);
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+			} catch (Exception ex2) {
+			}
+		}// finally-end
+
+		return x;
+	}// deleteQna()-end
+	
+	
+	
+	// --------------------
+	// 로그인된 id와 질문자id 비교
+	// x==1 같은사람, x==0 다른사람
+	// --------------------
+	public int compareWriter(int num, String current_user_id) {
+		int x = -100;
+		String dbUser_id = "";
+		
+		try {
+			// 처리
+			con = getConnection();
+			pstmt = con.prepareStatement("select user_id from qna where num=?");
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();// 쿼리 수행
+			
+			if (rs.next()) {
+				dbUser_id = rs.getString(1);
+				System.out.println("dbUser_id : " + dbUser_id);
+				System.out.println("current_user_id : " + current_user_id);
+				
+				boolean b = dbUser_id.equals(current_user_id);
+				System.out.println("boolean : " + b);
+				
+				if (dbUser_id.equals(current_user_id)) {
+					x = 1; // 글쓴이 id == 로그인한 id 
+				} else {
+					x = 0; // 글쓴이 id != 로그인한 id 
+				}
+			}
+
+			System.out.println("compareWriter()의 x : " + x);
+			
+		} catch (Exception e) {
+			System.out.println("compareWriter() 예외 발생 : " + e);
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+			} catch (Exception ex2) {
+			}
+		} // finally-end
+		
+		return x;
+	} // compareWriter()-end
 	
 	
 	
 	
-	
-	
-	
-	
-	
+	// --------------------
+	// 로그인된 관리자와 답변자id 비교
+	// y==1 같은관리자, y==0 다른관리자
+	// --------------------
+	public int compareAdmin(int num, String current_admin_id) {
+		int y = -100;
+		String dbAdmin_id = "";
+
+		try {
+			// 처리
+			con = getConnection();
+			pstmt = con.prepareStatement("select admin_id from qna where num=?");
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();// 쿼리 수행
+
+			if (rs.next()) {
+				dbAdmin_id = rs.getString(1);
+				System.out.println("dbAdmin_id : " + dbAdmin_id);
+				System.out.println("current_admin_id : " + current_admin_id);
+
+				boolean b = dbAdmin_id.equals(current_admin_id);
+				System.out.println("boolean : " + b);
+
+				if (dbAdmin_id.equals(current_admin_id)) {
+					y = 1; // 답변을 작성한 관리자 id == 현재 관리자 id
+				} else {
+					y = 0; /// 답변을 작성한 관리자 id != 현재 관리자 id
+				}
+			}
+
+			System.out.println("compareAdmin()의 y : " + y);
+
+		} catch (Exception e) {
+			System.out.println("compareAdmin() 예외 발생 : " + e);
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (con != null) {
+					con.close();
+				}
+			} catch (Exception ex2) {
+			}
+		} // finally-end
+
+		return y;
+	} // compareWriter()-end
 	
 	
 

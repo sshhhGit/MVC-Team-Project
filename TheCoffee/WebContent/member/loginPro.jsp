@@ -19,7 +19,7 @@
 <%--없는 ID--%>
 <c:if test="${check==-1 }">
   <script type="text/javascript">
-  alert("없는 ID입니다");
+  alert("존재하지않은 아이디 입니다");
   history.back();
   </script>
 </c:if>

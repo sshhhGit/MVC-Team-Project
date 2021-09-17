@@ -16,7 +16,7 @@ public class UpdateProAction implements CommandAction {
 		
 		request.setCharacterEncoding("UTF-8");
 		int num = Integer.parseInt(request.getParameter("num"));
-		String user_id = request.getParameter("user_id");
+//		String user_id = request.getParameter("user_id");
 //		String pageNum = request.getParameter("pageNum");
 		
 		QnaDTO dto = new QnaDTO(); // 객체 생성
@@ -27,7 +27,7 @@ public class UpdateProAction implements CommandAction {
 		dto.setUser_content(request.getParameter("user_content"));
 		
 		QnaDAO dao = QnaDAO.getInstance(); // dao 객체얻기
-		int x = dao.updateQna(dto);
+		int x = dao.updateQna_Q(dto);
 		// x = 1 수정 성공
 		// x = -100 수정 실패
 		
