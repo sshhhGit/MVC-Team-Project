@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="../static/style.css"> -->
 </head>
 <body>
 <h2>글내용</h2>

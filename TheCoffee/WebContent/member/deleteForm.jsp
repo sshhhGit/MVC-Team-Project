@@ -16,7 +16,7 @@ function pwCheck() {
 	return true;
 }
 </script>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../static/style.css">
 </head>
 <body>
 <h2>회원탈퇴</h2>

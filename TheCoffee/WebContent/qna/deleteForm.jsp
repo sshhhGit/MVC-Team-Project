@@ -9,7 +9,7 @@
 
 <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../static/style.css">
 
 <script>
  function check() {

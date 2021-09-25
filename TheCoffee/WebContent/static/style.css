@@ -3,9 +3,12 @@
    }
    table{
    margin: auto;
+   border-collapse: collapse;
    }
-   TD{
+   .table{
+   width: 50%;
    }
+   
    
    BODY{
    background-color:#f5f0e9;

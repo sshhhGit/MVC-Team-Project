@@ -8,7 +8,7 @@
 <title>list.jsp</title>
 <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../static/style.css">
 </head>
 <body>
 <%-- body부분 --%>
@@ -56,9 +56,9 @@ session.setAttribute("user_id", "user1"); // 세션에 등록(유저)
  </c:if>
  
  <c:if test="${count>0}">
-   <table width="700" border="1" cellpadding="10" cellspacing="0">
+   <table class="table" border="1" cellpadding="10" cellspacing="0">
      <tr bgcolor="ivory">
-       <td align="center" width="13%"><b>글번호</b></td>
+       <td align="center"><b>글번호</b></td>
        <td align="center"><b>질문</b></td>
      </tr>
      

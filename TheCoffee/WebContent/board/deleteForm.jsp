@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../static/style.css">
 <script>
   function check(){
 	  if(document.delForm.pw.value==''){

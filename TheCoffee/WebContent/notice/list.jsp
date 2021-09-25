@@ -14,7 +14,7 @@
 
 <script type="text/javascript" src="script.js"></script>
 
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../static/style.css">
 
 </head>
 <body>
@@ -40,7 +40,7 @@
 	</c:if>
 
 	<c:if test="${count>0}">
-		<table width="700" border="1">
+		<table class="table" width="700" border="1">
 			<tr>
 				<td>No.</td>
 				<td>제목</td>

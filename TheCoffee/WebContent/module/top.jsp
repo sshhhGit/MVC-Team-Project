@@ -3,64 +3,50 @@
 <%@ include file="header.jsp"%>
 <%--top.jsp --%>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
+<!-- <link rel="stylesheet" type="text/css" href="../static/style.css"> -->
 </head>
 <html>
 <body>
-	<table width="100%" border="0" cellspacing="0" cellpadding="0"
-		bgcolor="#363636">
-		<tbody>
-			<tr>
-				<td style="padding: 8px, 0px;">
-					<table width="1200" border="0" align="center" cellpadding="0"
-						cellspacing="0">
-						<tbody>
-							<tr>
-								<td width="100" rowspan="2"><a
-									href="${ctxpath }/member/main.do"><img
-										src="../imgs/top_logo3.png" border="0" title=""></a></td>
-								<!-- <td height="35" colspan="6" align="right">&nbsp;&nbsp;<a href="/bbs/login.php">로그인</a></td> -->
-							</tr>
-							<tr>
-								<td width="145">
-									<div align="center">
-										<a href="${ctxpath }/product/list.do""><img src="../imgs/top_product_button.png"></a>
-									</div>
-								</td>
-								<td width="120">
-									<div align="center">
-										<a href="${ctxpath }/board/list.do"><img src="../imgs/top_board_button.png"></a>
-									</div>
-								</td>
-								<td width="145">
-									<div align="center">
-										<a href="${ctxpath }/notice/list.do"><img src="../imgs/top_notice_button.png"></a>
-									</div>
-								</td>
-								<td width="120">
-									<div align="center">
-										<a href="${ctxpath }/qna/list.do"><img src="../imgs/top_qna_button.png"></a>
-									</div>
-								</td>
-								<td width="120">
-									<div align="center">
-										<a href="${ctxpath }/faq/list.do"><img src="../imgs/top_faq_button.png"></a>
-									</div>
-								</td>
-								<td valign="top">
-									<table width="149" border="0" cellspacing="0" cellpadding="0">
-										<%--     <tbody><tr>
-          <td><div align="right"><a href="${ctxpath }/member/loginForm.do">로그인</a>&nbsp;<a href="${ctxpath }/member/inputForm.do">회원가입</a></div></td>
-        </tr>
-    </tbody> --%>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#363636">
+    <tbody><tr>
+      <td style="padding:8px 0px;">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+  <td width="400" rowspan="2"></td>
+    <td width="400" rowspan="2" align="center"><a href="${ctxpath }/member/main.do"><img src="../imgs/top_logo3.png" border="0"></a></td>
+    <td height="35" colspan="8"></td>
+    <c:if test="${empty sessionScope.userId }">
+    <td colspan="2"></td>
+    </c:if>
+    <c:if test="${!empty sessionScope.userId }">
+    <td colspan="2" valign="bottom"><div align="center" style="color:white;">${sessionScope.userId }님</div></td>
+    </c:if>
+  </tr>
+  <tr valign="top">
+    <td width="145"><div align="center"><a href="${ctxpath }/product/list.do"><img src="../imgs/top_product_button2.png"></a></div></td>
+    <td width="120"><div align="center"><a href="${ctxpath }/notice/list.do"><img src="../imgs/top_notice_button2.png"></a></div></td>
+    <td width="145"><div align="center"><a href="${ctxpath }/board/list.do"><img src="../imgs/top_board_button2.png"></a></div></td>
+    <td width="120"><div align="center"><a href="${ctxpath }/qna/list.do"><img src="../imgs/top_qna_button2.png"></a></div></td>
+    <td width="120"><div align="center"><a href="${ctxpath }/faq/list.do"><img src="../imgs/top_faq_button2.png"></a></div></td>
+    <td width="120"></td>
+    <td width="120"></td>
+    <td width="120"></td>
+    <c:if test="${empty sessionScope.userId }">
+    <td width="120"><div align="right"><a href="${ctxpath }/member/loginForm.do"><img src="../imgs/top_login_button.png"></a></div></td>
+    <td width="120"><div align="left"><a href="${ctxpath }/member/inputForm.do"><img src="../imgs/top_input_button.png"></a></div></td>
+    </c:if>
+    <c:if test="${!empty sessionScope.userId and 'admin' ne sessionScope.userId}">
+    <td width="120"><div align="right"><a href="${ctxpath }/member/logOut.do"><img src="../imgs/top_logout_button.png"></a></div></td>
+    <td width="120"><div align="left"><a href="${ctxpath }/member/modify.do"><img src="../imgs/top_mymenu_button.png"></a></div></td>
+    </c:if>
+    <c:if test="${!empty sessionScope.userId and 'admin' eq sessionScope.userId}">
+    <td width="120"><div align="right"><a href="${ctxpath }/member/logOut.do"><img src="../imgs/top_logout_button.png"></a></div></td>
+    <td width="120"><div align="center"><a href="${ctxpath }/member/adminMenu.do"><img src="../imgs/top_adminmenu_button.png"></a></div></td>
+    </c:if>
+  </tr>
+</tbody></table>
+      </td>
+    </tr>
+</tbody></table>
 </body>
 </html>

@@ -13,7 +13,7 @@
 
 <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../static/style.css">
 
 <script type="text/javascript">
 
@@ -62,7 +62,7 @@ function init(){
 <body onLoad="init()">
 
 <form name="searchForm" method="get" onSubmit="return check()">
-<table width="60%" height ="80" cellpadding="5">
+<table class="table" cellpadding="5">
 	<tr>
 		<td align="left">
 			<font size="+2">
@@ -111,7 +111,7 @@ function init(){
 </c:if>
 
 <c:if test="${count > 0}">
-	<table width="60%" border="1">
+	<table class="table" width="60%" border="1">
 		<tr align="center">
 			<td>번호</td>
 			<td>분류</td>			

@@ -14,7 +14,7 @@
 
 <script type="text/javascript" src="script.js"></script>
 
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="../static/style.css">
 
 </head>
 <body>
@@ -34,7 +34,7 @@
  </c:if>
  
  <c:if test="${count>0}">
-   <table widht="700" border="1">
+   <table class="table" widht="700" border="1">
      <tr bgcolor="ivory">
        <td>글번호</td>
        <td>작성자</td>
