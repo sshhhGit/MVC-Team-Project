@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+
+#board_list_t {
+	
+	width: 900px;
+}
+
+#board_list_t tr{
+	border-top: 1px solid #dac6b9;
+	border-bottom: 1px solid #dac6b9;
+}
+
+#board_list_t td{
+	height: 30px;
+	text-align: center;
+	padding: 5px;
+}
+
+#board_list_t th{
+	height: 30px;
+	background-color: #fff2ec;
+	padding: 5px;
+	border-top: 2px solid #913F09;
+	border-bottom: 2px solid #913F09;
+}
+
+#board_content_t{
+	width: 900px;
+}
+
+#board_content_t th{
+	background-color: #fff2ec;
+	padding: 5px;
+}
+
+#board_content_t td{
+	height: 30px;
+	padding: 5px;
+}
+
+
+#board_write_t{
+	width: 900px;
+}
+
+#board_write_t th{
+	background-color: #fff2ec;
+	padding: 5px;
+}
+
+#board_write_t td{
+	height: 30px;
+	padding: 5px;
+}
+
+#board_update_t{
+	width: 900px;
+}
+
+#board_update_t th{
+	background-color: #fff2ec;
+	padding: 5px;
+	width: 150
+}
+
+#board_update_t td{
+	height: 30px;
+	padding: 5px;
+}
+
+#admin_login{
+	width: 300px;
+	
+}
+
+#admin_login td{
+	
+	height: 30px;
+	padding: 5px;
+}
+
+#admin_list_t td{
+
+	height: 30px;
+	padding: 5px;
+	
+}
+
+
+#admin_list_t th{
+	height: 30px;
+	background-color: #fff2ec;
+	padding: 5px;
+	
+}
+
+
+#member_insert_t {
+	width: 500px;
+}
+
+#member_insert_t td{
+	height: 30px;
+	padding: 5px;
+	
+}
+
+#notice_list_t{
+	width: 900px;
+	
+}
+
+#notice_list_t tr{
+	border-top: 1px solid #dac6b9;
+	border-bottom: 1px solid #dac6b9;
+}
+
+#notice_list_t th{
+	height: 30px;
+	background-color: #fff2ec;
+	padding: 5px;
+	border-top: 2px solid #913F09;
+	border-bottom: 2px solid #913F09;
+}
+
+#notice_list_t td{
+	height: 30px;
+	padding: 5px;
+}
+
+#notice_content_t{
+	width: 900px;
+	
+}
+
+#notice_content_t th{
+	
+	height: 30px;
+	width: 100px;
+	background-color: #fff2ec;
+	padding: 5px;
+	
+}
+
+#notice_content_t td{
+	height: 30px;
+	padding: 5px;
+}
+
+#notice_update_t{
+	width: 900px;
+	
+}
+
+#notice_update_t th{
+	
+	height: 30px;
+	width: 100px;
+	background-color: #fff2ec;
+	padding: 5px;
+	
+}
+
+#notice_update_t td{
+	height: 30px;
+	padding: 5px;
+}
+
+
+
+#qna_list_t{
+	width: 900px;
+	
+}
+
+#qna_list_t tr{
+	border-top: 1px solid #dac6b9;
+	border-bottom: 1px solid #dac6b9;
+}
+
+#qna_list_t th{
+	
+	height: 30px;
+	width: 65px;
+	background-color: #fff2ec;
+	padding: 5px;
+	border-top: 2px solid #913F09;
+	border-bottom: 2px solid #913F09;
+	
+}
+
+#qna_list_t td{
+	height: 30px;
+	padding: 5px;
+}
+
+
+#faq_list_t{
+	width: 900px;
+	
+}
+
+#faq_list_t tr{
+	border-top: 1px solid #dac6b9;
+	border-bottom: 1px solid #dac6b9;
+}
+
+#faq_list_t th{
+	height: 30px;
+	background-color: #fff2ec;
+	padding: 5px;
+	border-top: 2px solid #913F09;
+	border-bottom: 2px solid #913F09;
+}
+
+#faq_list_t td{
+	height: 30px;
+	padding: 5px;
+}
+
+#faq_content_t{
+	width: 900px;
+	
+}
+
+#faq_content_t th{
+	
+	height: 30px;
+	width: 100px;
+	background-color: #fff2ec;
+	padding: 5px;
+	
+}
+
+#faq_content_t td{
+	height: 30px;
+	padding: 5px;
+}
+
+#notice_update_t{
+	width: 900px;
+	
+}
+
+#notice_update_t th{
+	
+	height: 30px;
+	width: 100px;
+	background-color: #fff2ec;
+	padding: 5px;
+	
+}
+
+#notice_update_t td{
+	height: 30px;
+	padding: 5px;
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="faq">
+	<!-- 최대 글 번호 얻기 -->
+	<select id="numMax" resultType="Integer">
+	  select max(faq_no)
+	  from faq
+	</select>
+	
+	<!-- 글쓰기 -->
+	<insert id="insertFaq" parameterType="faqDTO">
+	  insert into faq(faq_writer, faq_title, faq_category, faq_regdate, faq_content, faq_ip)
+	  values(#{faq_writer}, #{faq_title}, #{faq_category}, NOW(), #{faq_content}, #{faq_ip})
+	</insert>
+	
+	<!-- 글 갯수 -->
+	<select id="selectCount" resultType="int">
+	  select count(*) from faq
+	</select>
+	
+	<!-- 리스트 -->
+	<select id="selectListFaq" parameterType="java.util.Map" resultType="faqDTO">
+	  select * from faq
+	  order by faq_regdate desc
+	  limit #{start},#{cnt}
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="readCount" parameterType="int">
+	  update faq set faq_readcount = faq_readcount+1
+	  where faq_no=#{faq_no}
+	</update>
+	
+	<!-- 글내용보기, 글 수정 폼 -->
+	<select id="selectOneFaq" parameterType="int" resultType="faqDTO">
+	  select * from faq
+	  where faq_no=#{num}
+	</select>
+	
+	<!-- DB글수정 -->
+	<update id="updateFaq" parameterType="faqDTO">
+	  update faq set faq_title=#{faq_title}, faq_category=#{faq_category}, faq_content=#{faq_content}
+	  where faq_no=#{faq_no}
+	</update>
+	
+	<!-- 글삭제 -->
+	<delete id="deleteFaq" parameterType="int">
+	  delete from faq
+	  where faq_no=#{faq_no}
+	</delete>
+	
+	 
+</mapper>

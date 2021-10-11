@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="qna">
+
+  <!-- 전체검색 -->
+  <select id="selectAll" resultType="qnaDto">
+    select * from qna
+  </select>
+
+  <!-- 글갯수 얻기 -->
+  <select id="selectCount" resultType="int">
+    select count(*) from qna
+  </select>
+  
+  <!-- 글갯수 얻기, 검색한내용 -->
+  <select id="selectCountBySearch" parameterType="String" resultType="int">
+	select count(*) 
+	from (select *, replace(user_content,' ','') from qna 
+	     where replace(user_content,' ','') like concat('%',#{search},'%')) re
+  </select>  
+  
+  <!-- 글 내용 얻기 -->
+  <select id="selectByNum" parameterType="int" resultType="qnaDto">
+    select * from qna
+    where num=#{num}
+  </select>
+
+  <!-- 페이지사이즈만큼 조회 -->
+  <select id="selectByPageSize" parameterType="java.util.Map" resultType="qnaDto">
+    select * from qna
+    order by num desc
+    limit #{start},#{count}
+  </select>
+  
+  <!-- 페이지사이즈만큼 조회, 입력된 검색내용으로 조회 -->
+  <select id="selectByPageSizeAndSearch" parameterType="java.util.Map" resultType="qnaDto">
+    select * from qna
+    where user_content LIKE CONCAT('%',#{search},'%')
+    order by num desc
+    limit #{start},#{count}
+  </select>  
+  
+  <!-- 페이지사이즈만큼 조회, 입력된 검색내용으로 조회2 -->
+  <select id="selectByPageSizeAndSearch2" parameterType="java.util.Map" resultType="qnaDto">
+	select *, replace(user_content,' ','') from qna
+	where replace(user_content,' ','') like concat('%',#{search},'%')
+	order by num desc
+    limit #{start},#{count}
+  </select> 
+  
+  <!-- 질문작성 -->
+  <insert id="insertQna_Q" parameterType="qnaDto">
+    insert into qna(user_id,user_content,user_regdate)
+    values(#{user_id},#{user_content},NOW())
+  </insert>
+  
+  <!-- 답변작성 -->
+  <update id="insertQna_A" parameterType="qnaDto">
+    update qna
+    set admin_id=#{admin_id},admin_content=#{admin_content},admin_regdate=NOW()
+    where num=#{num}
+  </update>
+  
+  <!-- 질문수정 -->
+  <update id="updateQna_Q" parameterType="qnaDto">
+    update qna
+    set user_content=#{user_content},user_regdate=NOW()
+    where num=#{num}
+  </update>
+  
+  <!-- 답변수정 -->
+  <update id="updateQna_A" parameterType="qnaDto">
+    update qna
+    set admin_content=#{admin_content},admin_regdate=NOW()
+    where num=#{num}
+  </update>
+  
+  <!-- 질문삭제 -->
+  <delete id="deleteQna_Q" parameterType="int">
+    delete from qna
+    where num=#{num}
+  </delete>
+  
+  <!-- 답변삭제 -->
+  <update id="deleteQna_A" parameterType="int">
+    update qna
+    set admin_id=NULL,admin_content=NULL,admin_regdate=NULL
+    where num=#{num}
+  </update>
+  
+  
+  
+  
+  
+  <!-- 입력된 id로 해당멤버검색 -->
+  <select id="selectMemberById" resultType="memberDto" parameterType="String">
+    select * from member
+    where id=#{id}
+  </select>
+  
+
+
+</mapper>    
+    
