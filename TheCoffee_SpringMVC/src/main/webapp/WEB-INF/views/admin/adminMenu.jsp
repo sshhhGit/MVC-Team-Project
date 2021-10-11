@@ -13,7 +13,7 @@
       <td>
         <form action="adminMemberList.do" name="adminMenu" method="post">
         <%-- <input type="hidden" name="id" value="${sessionScope.userId }"> --%>
-        <input type="submit" value="회원관리">
+        <input style="width: 400px; height: 120px; font-size: 50px; background-color: #FFF2EC;" type="submit" value="회원관리">
         </form>
       </td>
 <%--       <td>

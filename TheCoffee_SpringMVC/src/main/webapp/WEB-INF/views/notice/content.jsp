@@ -12,10 +12,10 @@
 
 </head>
 <body>
-	<h2>글내용 보기</h2>
+	<h2>공지사항</h2>
 	<table border="1" id="notice_content_t">
 		<tr>
-			<th>글번호</th>
+			<th>번호</th>
 			<td>${ndto.notice_no}</td>
 		</tr>
 
@@ -25,12 +25,12 @@
 		</tr>
 
 		<tr>
-			<th>글제목</th>
+			<th>제목</th>
 			<td>${ndto.notice_title}</td>
 		</tr>
 
 		<tr>
-			<th>글내용</th>
+			<th>내용</th>
 			<td><pre>${ndto.notice_content}</pre></td>
 		</tr>
 

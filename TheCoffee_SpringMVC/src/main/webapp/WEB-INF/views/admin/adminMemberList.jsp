@@ -41,7 +41,7 @@
 				<th>탈퇴</th>
 				<th>복구</th>
 			</tr>
-			<c:set var="num" value="${1 }" />
+			<c:set var="num" value="${(pageNum-1)*10+1 }" />
 			<c:forEach items="${mdto }" var="mdto" varStatus="i">
 				<tr>
 					<td>${num}</td>
@@ -78,13 +78,13 @@
       </c:if>
        --%> <!-- 이전블럭 --> <c:if test="${pp2.startPage>10}">
 						<a href="${ctxpath}/admin/adminMemberList.do?pageNum=${pp2.startPage-10}">
-							[이전페이지] </a>
+							[＜] </a>
 					</c:if> <!-- 페이지 처리 --> <c:forEach var="i" begin="${pp2.startPage}"
 						end="${pp2.endPage}">
 						<a href="${ctxpath}/admin/adminMemberList.do?pageNum=${i}"> [${i}] </a>
 					</c:forEach> <!-- 다음 블럭 --> <c:if test="${pp2.endPage<pp2.pageCnt}">
 						<a href="${ctxpath}/admin/adminMemberList.do?pageNum=${pp2.startPage+10}">
-							[다음페이지] </a>
+							[＞] </a>
 					</c:if>
 
 				</td>

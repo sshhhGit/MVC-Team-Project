@@ -17,12 +17,13 @@
 
 </head>
 <body>
-	<h2>글목록(전체글:${pp2.cnt})</h2>
+	<br>
+	<h2>고객의 소리</h2>
 	<%-- <h2>글목록(전체글:${cnt})</h2> --%>
-
-	<table>
+	<br>
+	<table id="board_list_t">
 		<tr>
-			<td align="right"><a href="${ctxpath}/board/writeForm.do">글쓰기</a>
+			<td style="text-align: right;"><a href="${ctxpath}/board/writeForm.do">글쓰기</a>
 			</td>
 		</tr>
 	</table>
@@ -34,10 +35,10 @@
 	<c:if test="${pp2.cnt>0}">
 		<table id="board_list_t">
 			<tr>
-				<th>글번호</th>
-				<th>글제목</th>
-				<th>이름</th>
-				<th>작성일</th>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>날짜</th>
 				<th>조회수</th>
 				<th>아이피</th>
 				<!--        <td>주소</td>
@@ -54,7 +55,7 @@
 					</td>
 
 					<!-- 글제목 -->
-					<td>
+					<td width="300px">
 						<!-- 답글 --> <c:if test="${bdto.re_level>0}">
 							<img src="../resources/imgs/levle.gif" width="${5*bdto.re_level}"
 								height="16">
@@ -78,8 +79,7 @@
 			</c:forEach>
 		</table>
 	</c:if>
-	총 글수 : ${pp2.cnt }
-	<br> 총 페이지 수 : ${pp2.pageCnt }
+
 	<br>
 	<!-- 블럭 처리 ,페이지 처리 -->
 	<c:if test="${pp2.cnt>0}">
@@ -93,13 +93,13 @@
       </c:if>
        --%> <!-- 이전블럭 --> <c:if test="${pp2.startPage>10}">
 						<a href="${ctxpath}/board/list.do?pageNum=${pp2.startPage-10}">
-							[이전블럭] </a>
+							[＜] </a>
 					</c:if> <!-- 페이지 처리 --> <c:forEach var="i" begin="${pp2.startPage}"
 						end="${pp2.endPage}">
 						<a href="${ctxpath}/board/list.do?pageNum=${i}"> [${i}] </a>
 					</c:forEach> <!-- 다음 블럭 --> <c:if test="${pp2.endPage<pp2.pageCnt}">
 						<a href="${ctxpath}/board/list.do?pageNum=${pp2.startPage+10}">
-							[다음블럭] </a>
+							[＞] </a>
 					</c:if>
 
 				</td>

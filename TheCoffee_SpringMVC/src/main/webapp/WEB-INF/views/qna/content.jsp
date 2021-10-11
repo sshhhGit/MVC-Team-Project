@@ -17,7 +17,7 @@
 <br>
 
 <div align="center">
-  <h2>Q&A 글 내용보기</h2>
+  <h2>Q&A</h2>
   <font size="5"><b>글번호</b>&nbsp;${qnaDto.num}</font>
 </div>
 <br><br><br>

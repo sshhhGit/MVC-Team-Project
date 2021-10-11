@@ -26,46 +26,23 @@ if (receivedSearch == null || receivedSearch == "") {
 %>
 
 <br>
- <h2>Q&A</h2><c:if test="${count!=null and count!=0}">총 ${count}개의 글</c:if>
- 
- <table>
-<%--    <tr>
-    <td align="left">
-      <b>현재 session : <font color="blue">
-       <c:if test="${userId==null}">비회원상태</c:if>
-       <c:if test="${userId!=null}">
-         ${userId}
-       </c:if>
-	    <%
-// 	     if (session.getAttribute("user_id") != null) {
-// 	    	 out.print(session.getAttribute("user_id"));
-// 	     } else if (session.getAttribute("admin_id") != null) {
-// 	    	 out.print(session.getAttribute("admin_id"));
-// 	     } else {
-// 	    	 out.print("비회원상태");
-// 	     }
-	    %>
-     </font></b>
-    </td>
-   </tr> --%>
-   
+ <h2>Q&A</h2><%-- <c:if test="${count!=null and count!=0}">총 ${count}개의 글</c:if> --%>
+ 	<br>
+	<table id="board_list_t">
+		<tr>
+			<td style="text-align: right;"><a href="${ctxpath}/qna/writeForm.do">글쓰기</a>
+			</td>
+		</tr>
+	</table>
+<%--  <table>
    <tr>
     <td align="right">
       <c:if test="${userId!=null and userId!='admin'}">
         <input type="button" value="새 질문작성" onclick="location='${ctxpath}/qna/writeForm.do'"><br><br>
       </c:if>
-    
-     <%
-//       if (session.getAttribute("user_id") != null) {
-    	  %>
-<%--         <input type="button" value="질문작성" onclick="location='${ctxpath}/qna/writeForm.do'"><br><br> --%>
-    	  <%
-//       }
-     %>
     </td>
    </tr>
- </table>
- <br>
+ </table> --%>
  
  <c:if test="${count==null}">
     글이 없다. count==null이다.
@@ -78,7 +55,7 @@ if (receivedSearch == null || receivedSearch == "") {
  <c:if test="${count>0}">
    <table id="qna_list_t">
      <tr>
-       <th>글번호</th>
+       <th>번호</th>
        <th>질문</th>
      </tr>
      
@@ -99,7 +76,7 @@ if (receivedSearch == null || receivedSearch == "") {
      </c:forEach>
    </table>
  </c:if>
- <br><br>
+ <br>
  
 
 
@@ -134,13 +111,13 @@ if (receivedSearch == null || receivedSearch == "") {
     </td>
   </tr>
   
-  <tr>
+<%--   <tr>
     <td align="center">
       <c:if test="${count!=0}">
          ${pageNum}/${pageTest.pageCnt} 페이지
       </c:if>
     </td>
-  </tr>
+  </tr> --%>
   
   <tr>
     <td align="center">

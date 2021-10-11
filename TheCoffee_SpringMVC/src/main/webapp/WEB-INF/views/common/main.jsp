@@ -167,7 +167,7 @@ $(function() {
 
 <table width="100%"  border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td bgcolor="#3B2518"><div align="center"><a href="/bbs/content.php?co_id=FRANCHISE1"><img src="${ctxpath }/resources/imgs/slide_interior.jpg" width="1200" height="700" border="0"></a></div></td>
+    <td bgcolor="#3B2518"><div align="center"><img src="${ctxpath }/resources/imgs/slide_interior.jpg" width="1200" height="700" border="0"></div></td>
   </tr>
 </table>
 

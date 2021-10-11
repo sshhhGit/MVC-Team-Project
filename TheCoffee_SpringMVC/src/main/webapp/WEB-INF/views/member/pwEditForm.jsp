@@ -10,10 +10,13 @@
 
 </head>
 <body>
-	<h2>비밀번호 변경</h2>
+<h2>비밀번호 변경</h2>
+<table border="1">
+<tr>
+<td>
 	<form action="${ctxpath }/member/pwEditPro.do"
 		onsubmit="return oldPwCheck()" name="pwEditForm" method="post">
-		<table border="1">
+		<table border="0">
 			<tr>
 				<td>기존 비밀번호</td>
 				<td><input type="password" name="oldPw" id="oldPw" size="15">
@@ -38,5 +41,8 @@
 		</table>
 
 	</form>
+	</td>
+</tr>
+</table>
 </body>
 </html>

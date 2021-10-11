@@ -12,10 +12,10 @@
 
 </head>
 <body>
-	<h2>글내용 보기</h2>
+	<h2>고객의 소리</h2>
 	<table border="1" id="board_content_t">
 		<tr>
-			<th>글번호</th>
+			<th width="15%">번호</th>
 			<td>${bdto.num}</td>
 		</tr>
 
@@ -30,12 +30,12 @@
 		</tr>
 
 		<tr>
-			<th>글제목</th>
+			<th>제목</th>
 			<td>${bdto.subject}</td>
 		</tr>
 
 		<tr>
-			<th>글내용</th>
+			<th>내용</th>
 			<td><pre>${bdto.content}</pre></td>
 		</tr>
 

@@ -12,10 +12,10 @@
 
 </head>
 <body>
-	<h2>글내용 보기</h2>
+	<h2>FAQ</h2>
 	<table border="1" id="faq_content_t">
 		<tr>
-			<th>글번호</th>
+			<th>번호</th>
 			<td>${fdto.faq_no}</td>
 		</tr>
 
@@ -30,12 +30,12 @@
 		</tr>
 
 		<tr>
-			<th>글제목</th>
+			<th>제목</th>
 			<td>${fdto.faq_title}</td>
 		</tr>
 
 		<tr>
-			<th>글내용</th>
+			<th>내용</th>
 			<td><pre>${fdto.faq_content}</pre></td>
 		</tr>
 

@@ -15,6 +15,9 @@
 <body>
 	<h2>개인정보 변경</h2>
 	<table border="1">
+<tr>
+<td>
+	<table border="0">
 	<tr>
 	<td>
 	<form action="editPro.do" name="editForm" method="post"
@@ -75,6 +78,9 @@
 			</tr>
 		</table>
 	</form>
+	</td>
+	</tr>
+	</table>
 	</td>
 	</tr>
 	</table>

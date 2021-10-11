@@ -17,18 +17,16 @@
 
 </head>
 <body>
-<table align="center">
-	<td>
-		<font size="+3">
-			<strong>FAQ</strong><font size="+1">&nbsp;(전체글: ${pp2.cnt}) </font>
-		</font>
-	</td>
-</table>
-
-<table>
-	<td align="right"><a href="${ctxpath}/faq/writeForm.do">글쓰기</a>
-	</td>
-</table>
+	<br>
+	<h2>FAQ</h2>
+	<%-- <h2>글목록(전체글:${cnt})</h2> --%>
+	<br>
+	<table id="board_list_t">
+		<tr>
+			<td style="text-align: right;"><a href="${ctxpath}/faq/writeForm.do">글쓰기</a>
+			</td>
+		</tr>
+	</table>
 
 	<c:if test="${pp2.cnt==0}">
 		게시판에 저장된글이 없습니다
@@ -38,10 +36,10 @@
 	<c:if test="${pp2.cnt>0}">
 		<table id="faq_list_t">
 			<tr>
-				<th>글번호</th>
+				<th>번호</th>
 				<th>분류</th>
 				<th>제목</th>
-				<th>작성일</th>
+				<th>날짜</th>
 				<th>조회수</th>
 			</tr>
 
@@ -73,6 +71,7 @@
 				</tr>
 			</c:forEach>
 		</table>
+		<br>
 	</c:if>
 	<!-- 블럭 처리 ,페이지 처리 -->
 	<c:if test="${pp2.cnt>0}">
@@ -82,13 +81,13 @@
 					<!-- 이전블럭 -->
 					<c:if test="${pp2.startPage>10}">
 						<a href="${ctxpath}/faq/list.do?pageNum=${pp2.startPage-10}">
-							[이전블럭] </a>
+							[＜] </a>
 					</c:if> <!-- 페이지 처리 --> <c:forEach var="i" begin="${pp2.startPage}"
 						end="${pp2.endPage}">
 						<a href="${ctxpath}/faq/list.do?pageNum=${i}"> [${i}] </a>
 					</c:forEach> <!-- 다음 블럭 --> <c:if test="${pp2.endPage<pp2.pageCnt}">
 						<a href="${ctxpath}/faq/list.do?pageNum=${pp2.startPage+10}">
-							[다음블럭] </a>
+							[＞] </a>
 					</c:if>
 
 				</td>
