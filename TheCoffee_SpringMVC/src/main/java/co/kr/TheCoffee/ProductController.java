@@ -32,16 +32,34 @@ public class ProductController {
 	@Autowired //setter작업이 자동으로 된다 
 	private SqlSession sqlSession;//변수 MyBatis 사용하려고 
 	
-	//상품 리스트
+	//상품 리스트,검색 상품 리스트
 	@RequestMapping("/list.do")
-	public String listPorduct(Model model) {
+	public String listPorduct(Model model, String search) {
 		
-		int cnt = sqlSession.selectOne("product.selectCount");//총 상품 갯수 얻기
-	
-		List<ProductDto> list = sqlSession.selectList("product.selectListProduct");
+		if(search != null) {
+			
+			int cnt = sqlSession.selectOne("product.searchCount",search);//총 검색 상품 갯수 얻기
+			
+			System.out.println("cnt:"+cnt);
+			System.out.println("--------------");
+			System.out.println("search:"+search);
+			List<ProductDto> list = sqlSession.selectList("product.searchListProduct",search);
+			
+			model.addAttribute("search",search);//검색 상품 갯수
+			model.addAttribute("cnt", cnt);//총 상품 갯수
+			model.addAttribute("list",list);//jsp에서 사용할 데이터
+		}else {
+			int cnt = sqlSession.selectOne("product.selectCount");//총 상품 갯수 얻기
+			
+			List<ProductDto> list = sqlSession.selectList("product.selectListProduct");
+//			List<ProductDto> list = sqlSession.selectList("product.searchListProduct");
+			
+			model.addAttribute("cnt", cnt);//총 상품 갯수
+			model.addAttribute("list",list);//jsp에서 사용할 데이터
 		
-		model.addAttribute("cnt", cnt);//총 상품 갯수
-		model.addAttribute("list",list);//jsp에서 사용할 데이터
+		}
+		
+				
 		
 		return ".main.product.list";
 	

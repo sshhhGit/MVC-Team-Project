@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../resources/js/product_script.js"></script>
-<link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+<script type="text/javascript" src="${ctxpath}/resources/js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="${ctxpath}/resources/css/style.css">
 <title>상품 정보</title>
 <style type="text/css">
 #pd{
