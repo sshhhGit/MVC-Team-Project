@@ -24,42 +24,46 @@ public class FaqController {
 	private SqlSession sqlSession;
 	
 	//글쓰기
-		@RequestMapping("/writeForm.do")
-		public String writeForm(Model model, String faq_no, String pageNum) {
+	@RequestMapping("/writeForm.do")
+	public String writeForm(Model model, String faq_no, String pageNum) {
+		
+		if (faq_no==null) {
+			faq_no = "0";		//글 번호
+		}
+		model.addAttribute("pageNum", pageNum);
+		model.addAttribute("faq_no",new Integer(faq_no));
+		return ".main.faq.writeForm";
+	}
+		
+	//DB글쓰기
+	@RequestMapping(value = "writePro.do", method = RequestMethod.POST)
+	public String writerPro(@ModelAttribute("faqDto") FaqDto faqDto, HttpServletRequest request) {
+		
+		int maxNum = 0; //최대 글번호에 넣을 변수
+		if(sqlSession.selectOne("faq.numMax") != null) {
 			
-			if (faq_no==null) {
-				faq_no = "0";		//글 번호
-			}
-			model.addAttribute("pageNum", pageNum);
-			model.addAttribute("faq_no",new Integer(faq_no));
-
-			return ".main.faq.writeForm";
+			maxNum = sqlSession.selectOne("faq.numMax");
 		}
 		
-		//DB글쓰기
-		@RequestMapping(value = "writePro.do", method = RequestMethod.POST)
-		public String writerPro(@ModelAttribute("faqDto") FaqDto faqDto, HttpServletRequest request) {
-			
-			int maxNum = 0; //최대 글번호에 넣을 변수
-			if(sqlSession.selectOne("faq.numMax") != null) {
-				
-				maxNum = sqlSession.selectOne("faq.numMax");
-			}
-			
-			if(maxNum != 0) { //답글 그룹으로 사용
-				maxNum = maxNum+1;
-			}else { //첫글일시
-				maxNum = 1;
-			}
-			String ip = request.getRemoteAddr();
-			faqDto.setFaq_ip(ip);
-			
-			sqlSession.insert("faq.insertFaq", faqDto);
-			return "redirect:/faq/list.do";
+		if(maxNum != 0) { //답글 그룹으로 사용
+			maxNum = maxNum+1;
+		}else { //첫글일시
+			maxNum = 1;
 		}
+		String ip = request.getRemoteAddr();
+		faqDto.setFaq_ip(ip);
+		
+		sqlSession.insert("faq.insertFaq", faqDto);
+		return "redirect:/faq/list.do";
+	}
 	
+	//리스트, 검색
 	@RequestMapping("/list.do")
-	public String listFaq(Model model, @RequestParam(value="pageNum", required = false)String pageNum, HttpServletRequest request) {
+	public String listFaq(Model model,
+			@RequestParam(value="pageNum", required = false)String pageNum,
+			@RequestParam(defaultValue="all")String type,
+			@RequestParam(defaultValue="")String keyword,
+			HttpServletRequest request) throws Exception {
 		
 		if(pageNum==null) {
 			pageNum = "1";
