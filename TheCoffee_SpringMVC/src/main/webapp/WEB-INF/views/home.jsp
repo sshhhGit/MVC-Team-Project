@@ -23,7 +23,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand" href="#page-top">강승호</a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -43,7 +43,7 @@
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="${ctxpath }/resources/assets/img/kang.png" alt="..." />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">신입 개발자 강승호</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">신입 개발자 강승호 입니다.</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -73,7 +73,8 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/cabin.png" alt="..." />
+                            <%-- <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/cabin.png" alt="..." /> --%>
+                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/main.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
@@ -82,7 +83,8 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/cake.png" alt="..." />
+                            <%-- <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/cake.png" alt="..." /> --%>
+                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/product.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 3-->
@@ -91,7 +93,8 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/circus.png" alt="..." />
+                            <%-- <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/circus.png" alt="..." /> --%>
+                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/qna.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 4-->
@@ -100,7 +103,8 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/game.png" alt="..." />
+                            <%-- <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/game.png" alt="..." /> --%>
+                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/faq.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 5-->
@@ -109,7 +113,8 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/safe.png" alt="..." />
+                            <%-- <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/safe.png" alt="..." /> --%>
+                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/signup.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 6-->
@@ -118,7 +123,8 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/submarine.png" alt="..." />
+                            <%-- <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/submarine.png" alt="..." /> --%>
+                            <img class="img-fluid" src="${ctxpath }/resources/assets/img/portfolio/admin.png" alt="..." />
                         </div>
                     </div>
                 </div>
@@ -232,28 +238,27 @@
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Location</h4>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
+                           	서울특별시 금천구 독산로16길 25
                             <br />
-                            Clark, MO 65243
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                        <!-- <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a> -->
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/sshhhGit"><i class="fab fa-fw fa-github"></i></a>
+                        <!-- <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a> -->
+                        <!-- <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a> -->
                     </div>
                     <!-- Footer About Text-->
-                    <div class="col-lg-4">
+                    <!-- <div class="col-lg-4">
                         <h4 class="text-uppercase mb-4">About Freelancer</h4>
                         <p class="lead mb-0">
                             Freelance is a free to use, MIT licensed Bootstrap theme created by
                             <a href="http://startbootstrap.com">Start Bootstrap</a>
                             .
                         </p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </footer>
@@ -272,7 +277,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">회원가입</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">메인</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -281,7 +286,8 @@
                                     </div>
                                     <!-- Portfolio Modal - Image-->
                                     <a href="/test07_tiles_mem_board/member/insertForm.do">
-                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/cabin.png" alt="..." /></a>
+                                    <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/cabin.png" alt="..." /></a> --%>
+                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/main.png" alt="..." /></a>
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
@@ -305,7 +311,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">상품소개</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -313,7 +319,8 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/cake.png" alt="..." />
+                                    <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/cake.png" alt="..." /> --%>
+                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/product.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
@@ -337,7 +344,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">1:1 문의</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -345,8 +352,9 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/circus.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
+                                    <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/circus.png" alt="..." /> --%>
+                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/qna.png" alt="..." />
                                     <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
@@ -369,7 +377,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">FAQ</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -377,7 +385,8 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/game.png" alt="..." />
+                                    <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/game.png" alt="..." /> --%>
+                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/faq.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
@@ -401,7 +410,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">회원가입</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -409,7 +418,8 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/safe.png" alt="..." />
+                                    <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/safe.png" alt="..." /> --%>
+                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/signup.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
@@ -433,7 +443,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">관리자 메뉴</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -441,7 +451,8 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/submarine.png" alt="..." />
+                                    <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/submarine.png" alt="..." /> --%>
+                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/admin.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">

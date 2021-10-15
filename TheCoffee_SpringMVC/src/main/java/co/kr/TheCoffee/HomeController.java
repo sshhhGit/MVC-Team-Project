@@ -37,4 +37,9 @@ public class HomeController {
 		//return ".main.layout";
 	}
 	
+	@RequestMapping("main.do")
+	public String main() {
+		return ".main.layout";
+	}
+	
 }
