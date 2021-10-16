@@ -15,7 +15,7 @@
 	<h2>FAQ</h2>
 	<table border="1" id="faq_content_t">
 		<tr>
-			<th>번호</th>
+			<th width="15%">번호</th>
 			<td>${fdto.faq_no}</td>
 		</tr>
 

@@ -143,7 +143,7 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
+                    <div class="col-lg-4 ms-auto"><p class="lead">MVC 구조의 Maven을 사용한 Spring lagacy 프로젝트 입니다.</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
@@ -285,11 +285,13 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <a href="/test07_tiles_mem_board/member/insertForm.do">
+                                    <a href="main.do">
                                     <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/cabin.png" alt="..." /></a> --%>
                                     <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/main.png" alt="..." /></a>
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
+                                    <p class="mb-4">메인 페이지 입니다. 기본적은 디자인은 메가커피 홈페이지를 일부 참고하였고, 
+                                    상단에는 각 게시판으로 이동하는 메뉴와 로그인, 회원가입이 위치하고 있습니다.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -319,10 +321,12 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
+                                    <a href="product/list.do">
                                     <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/cake.png" alt="..." /> --%>
-                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/product.png" alt="..." />
+                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/product.png" alt="..." /></a>
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
+                                    <p class="mb-4">상품 소개 페이지 입니다. 상품의 이름을 검색하거나 해당 상품의 이미지를 클릭하여 상세보기 페이지에서 상품에 대한 설명을 읽을 수 있습니다. 관리자로 로그인하여 상품을 등록, 삭제, 수정이 가능합니다.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -352,10 +356,12 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
+                                    <a href="qna/list.do">
                                     <!-- Portfolio Modal - Text-->
                                     <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/circus.png" alt="..." /> --%>
-                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/qna.png" alt="..." />
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/qna.png" alt="..."> </a>
+                                    <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
+                                    <p class="mb-4">1:1 문의 페이지 입니다. 회원가입을 하지 않으면 글을 남길 수 없고, 홈페이지에 로그인을하면 1:1 질문글을 작성할 수 있습니다. 관리자 계정으로 로그인하면 질문에 답변을 등록할 수 있습니다.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -385,10 +391,12 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
+                                    <a href="faq/list.do">
                                     <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/game.png" alt="..." /> --%>
-                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/faq.png" alt="..." />
+                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/faq.png" alt="..." /></a>
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
+                                    <p class="mb-4">FAQ페이지 입니다. 관리자 계정으로 로그인하면 분류를 선택해 자주 묻는 질문을 게시글로 등록 할 수 있습니다.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -418,10 +426,12 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
+                                    <a href="member/insertForm.do">
                                     <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/safe.png" alt="..." /> --%>
-                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/signup.png" alt="..." />
+                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/signup.png" alt="..." /></a>
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
+                                    <p class="mb-4">홈페이지 의 회원가입 페이지 입니다. 각 항목마다 정규 표현식을 적용시켜 유효성 검사를 진행하도록 하였고, 회원 DB와 비교하여 아이디 중복 확인이 가능합니다. 회원가입을 하면 실제로 기입한 이메일로 이메일 인증 메일이 발송되어, 이메일 인증을 진행하여야 회원가입처리가 되게 하였습니다.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
@@ -451,10 +461,12 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
+                                    <a href="admin/adminMemberList.do">
                                     <%-- <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/submarine.png" alt="..." /> --%>
-                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/admin.png" alt="..." />
+                                    <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/admin.png" alt="..." /></a>
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
+                                    <p class="mb-4">관리자 메뉴의 회원관리 페이지입니다. 관리자 계정으로 로그인하어 사용할 수 있는 페이지입니다. 현재 가입한 모든 회원들을 조회할 수 있고, 가입중인 회원의 아이디를 검색하거나 탈퇴, 복구시킬 수 있습니다.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window

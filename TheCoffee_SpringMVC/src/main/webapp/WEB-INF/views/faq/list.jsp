@@ -21,14 +21,14 @@
 	<h2>FAQ</h2>
 	<%-- <h2>글목록(전체글:${cnt})</h2> --%>
 	<br>
-	
+	<c:if test="${'admin' eq userId}">
 	<table id="faq_list_t">
 		<tr>
 			<td style="text-align: right;"><a href="${ctxpath}/faq/writeForm.do">글쓰기</a>
 			</td>
 		</tr>
 	</table>
-
+	</c:if>
 	<c:if test="${pp2.cnt==0}">
 		게시판에 저장된글이 없습니다
 	</c:if>

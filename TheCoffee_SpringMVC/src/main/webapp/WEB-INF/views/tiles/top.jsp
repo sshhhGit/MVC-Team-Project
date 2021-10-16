@@ -13,7 +13,7 @@
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tbody><tr>
   <td width="400" rowspan="2"></td>
-    <td width="400" rowspan="2" align="center"><a href="${ctxpath }"><img src="${ctxpath }/resources/imgs/top_logo3.png" border="0"></a></td>
+    <td width="400" rowspan="2" align="center"><a href="${ctxpath }/main.do"><img src="${ctxpath }/resources/imgs/top_logo3.png" border="0"></a></td>
     <td height="35" colspan="8"></td>
     <%-- <c:if test="${empty sessionScope.userId }"> --%>
     <c:if test="${empty userId }">

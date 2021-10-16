@@ -10,8 +10,11 @@
 <link rel="stylesheet" type="text/css" href="${ctxpath }/resources/style.css">
 </head>
 <body>
-
 <br>
+<c:if test="${userId == null }">
+<h1>로그인이 필요합니다.</h1>
+</c:if>
+<c:if test="${userId != null }">
 <h2>Q&A 질문 작성</h2>
 
 <form method="post" name="writeForm" action="${ctxpath}/qna/writePro.do" onsubmit="return qnaWriteSave()">
@@ -36,6 +39,6 @@
  </table>
 </form>
 <br><br>
-
+</c:if>
 </body>
 </html>
