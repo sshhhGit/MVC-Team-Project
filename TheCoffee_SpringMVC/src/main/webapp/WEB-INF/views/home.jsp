@@ -143,12 +143,12 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">MVC 구조의 Maven을 사용한 Spring lagacy 프로젝트 입니다.</p></div>
+                    <div class="col-lg-4 ms-auto"><p class="lead">MVC 구조의 Maven을 사용한 Spring lagacy 프로젝트 입니다. 테이터 베이스로는 MySQL과 MyBatis 프레임워크를 사용하였습니다.</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">기본적인 CRUD 기능을 구현한 게시판 프로젝트 입니다. CRUD 기능 외의 페이징처리와 답글, 이미지 업로드등 게시판 기능을 추가하였습니다.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">회원관리 기능에서는 회원가입, 이메일 인증, 로그인, 개인정보변경, 회원탈퇴 등의 기능을 구현하였습니다.</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">자세한 소스코드 내용은 github.com/sshhhGit/Spring_Legacy_Project에서 확인해 보실 수 있습니다.</p></div>
+                    <!-- <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div> -->
                 </div>
                 <!-- About Section Button-->
 <!--                 <div class="text-center mt-4">
@@ -431,7 +431,7 @@
                                     <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/signup.png" alt="..." /></a>
                                     <!-- Portfolio Modal - Text-->
                                     <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
-                                    <p class="mb-4">홈페이지 의 회원가입 페이지 입니다. 각 항목마다 정규 표현식을 적용시켜 유효성 검사를 진행하도록 하였고, 회원 DB와 비교하여 아이디 중복 확인이 가능합니다. 회원가입을 하면 실제로 기입한 이메일로 이메일 인증 메일이 발송되어, 이메일 인증을 진행하여야 회원가입처리가 되게 하였습니다.</p>
+                                    <p class="mb-4">홈페이지의 회원가입 페이지 입니다. 각 항목마다 정규 표현식을 적용시켜 유효성 검사를 진행하도록 하였고, 회원 DB와 비교하여 아이디 중복 확인이 가능합니다. 회원가입을 하면 실제로 기입한 이메일로 이메일 인증 메일이 발송되어, 이메일 인증을 진행하여야 회원가입처리가 되게 하였습니다. 관리자 계정의 아이디와 비밀번호는 admin, 1234 입니다.</p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
