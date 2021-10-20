@@ -59,6 +59,7 @@
             <div class="container">
                 <!-- Portfolio Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">포트폴리오 구성</h2>
+                <center><h4>(클릭하면 이동합니다)</h4></center>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -292,10 +293,10 @@
                                     <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
                                     <p class="mb-4">메인 페이지 입니다. 기본적은 디자인은 메가커피 홈페이지를 일부 참고하였고, 
                                     상단에는 각 게시판으로 이동하는 메뉴와 로그인, 회원가입이 위치하고 있습니다.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+<!--                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                         </div>
@@ -327,10 +328,10 @@
                                     <!-- Portfolio Modal - Text-->
                                     <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
                                     <p class="mb-4">상품 소개 페이지 입니다. 상품의 이름을 검색하거나 해당 상품의 이미지를 클릭하여 상세보기 페이지에서 상품에 대한 설명을 읽을 수 있습니다. 관리자로 로그인하여 상품을 등록, 삭제, 수정이 가능합니다.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                    <!-- <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                         </div>
@@ -362,10 +363,10 @@
                                     <img class="img-fluid rounded mb-5" src="${ctxpath }/resources/assets/img/portfolio/qna.png" alt="..."> </a>
                                     <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
                                     <p class="mb-4">1:1 문의 페이지 입니다. 회원가입을 하지 않으면 글을 남길 수 없고, 홈페이지에 로그인을하면 1:1 질문글을 작성할 수 있습니다. 관리자 계정으로 로그인하면 질문에 답변을 등록할 수 있습니다.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                    <!-- <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                         </div>
@@ -397,10 +398,10 @@
                                     <!-- Portfolio Modal - Text-->
                                     <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
                                     <p class="mb-4">FAQ페이지 입니다. 관리자 계정으로 로그인하면 분류를 선택해 자주 묻는 질문을 게시글로 등록 할 수 있습니다.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                    <!-- <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                         </div>
@@ -432,10 +433,10 @@
                                     <!-- Portfolio Modal - Text-->
                                     <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
                                     <p class="mb-4">홈페이지의 회원가입 페이지 입니다. 각 항목마다 정규 표현식을 적용시켜 유효성 검사를 진행하도록 하였고, 회원 DB와 비교하여 아이디 중복 확인이 가능합니다. 회원가입을 하면 실제로 기입한 이메일로 이메일 인증 메일이 발송되어, 이메일 인증을 진행하여야 회원가입처리가 되게 하였습니다. 관리자 계정의 아이디와 비밀번호는 admin, 1234 입니다.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                    <!-- <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                         </div>
@@ -467,10 +468,10 @@
                                     <!-- Portfolio Modal - Text-->
                                     <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p> -->
                                     <p class="mb-4">관리자 메뉴의 회원관리 페이지입니다. 관리자 계정으로 로그인하어 사용할 수 있는 페이지입니다. 현재 가입한 모든 회원들을 조회할 수 있고, 가입중인 회원의 아이디를 검색하거나 탈퇴, 복구시킬 수 있습니다.</p>
-                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                    <!-- <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>
                                         Close Window
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                         </div>
