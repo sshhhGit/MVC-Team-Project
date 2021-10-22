@@ -18,17 +18,19 @@
 </head>
 <body>
 	<br>
+	<br>
+	<br>
 	<h2>FAQ</h2>
 	<%-- <h2>글목록(전체글:${cnt})</h2> --%>
 	<br>
-	<c:if test="${'admin' eq userId}">
+	<%-- <c:if test="${'admin' eq userId}"> --%>
 	<table id="faq_list_t">
 		<tr>
 			<td style="text-align: right;"><a href="${ctxpath}/faq/writeForm.do">글쓰기</a>
 			</td>
 		</tr>
 	</table>
-	</c:if>
+	<%-- </c:if> --%>
 	<c:if test="${pp2.cnt==0}">
 		게시판에 저장된글이 없습니다
 	</c:if>
@@ -36,7 +38,7 @@
 	<c:if test="${pp2.cnt>0}">
 		<table id="faq_list_t">
 			<tr>
-				<th></th>
+				<th>No.</th>
 				<th>분류</th>
 				<th>제목</th>
 				<th>날짜</th>
@@ -115,7 +117,6 @@
 			</tr>
 		</table>
 	</c:if>
-	<br>
 	<div>
 		<form id="searchForm" action="${ctxpath}/faq/list.do">
 			<select name="type">
