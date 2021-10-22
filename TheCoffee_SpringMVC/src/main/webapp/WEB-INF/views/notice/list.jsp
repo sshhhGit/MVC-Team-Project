@@ -36,7 +36,7 @@
 	<c:if test="${pp2.cnt>0}">
 		<table id="notice_list_t">
 			<tr>
-				<th>No.</th>
+				<th>번호</th>
 				<th>제목</th>
 				<th>날짜</th>
 				<th>조회수</th>
