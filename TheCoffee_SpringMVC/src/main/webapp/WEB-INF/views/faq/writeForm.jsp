@@ -15,8 +15,10 @@
 <link rel="stylesheet" type="text/css" href="${ctxpath}/resources/css/style.css">
 </head>
 <body>
-
-
+<c:if test="${'admin' ne userId}">
+<h1>관리자 권한이 필요합니다</h1>
+</c:if>
+<c:if test="${'admin' eq userId}">
 <h2>FAQ 작성</h2>
 
 
@@ -82,6 +84,6 @@
  </table>
   
 </form>
-
+</c:if>
 </body>
 </html>
