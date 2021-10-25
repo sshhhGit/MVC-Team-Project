@@ -147,7 +147,7 @@
                     <div class="col-lg-4 ms-auto"><p class="lead">MVC 구조의 Maven을 사용한 Spring lagacy 프로젝트 입니다. 테이터 베이스로는 MySQL과 MyBatis 프레임워크를 사용하였습니다.</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">기본적인 CRUD 기능을 구현한 게시판 프로젝트 입니다. CRUD 기능 외의 페이징처리와 답글, 이미지 업로드등 게시판 기능을 추가하였습니다.</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">회원관리 기능에서는 회원가입, 이메일 인증, 로그인, 개인정보변경, 회원탈퇴 등의 기능을 구현하였습니다.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">현재 웹 호스팅은 AWS를 사용하여 ubuntu 환경에서 톰캣을 통해 배포하였습니다. DB는 MtSQL Workbench를 이용하여 외부에서 원격으로 관리하고 있습니다.</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">현재 웹 호스팅은 AWS를 사용하여 ubuntu 환경에서 톰캣을 통해 배포하였습니다. DB는 MySQL Workbench를 이용하여 외부에서 원격으로 관리하고 있습니다.</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">자세한 소스코드 내용은 github.com/sshhhGit/Spring_Legacy_Project에서 확인해 보실 수 있습니다.</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead"></p></div>
                 </div>
