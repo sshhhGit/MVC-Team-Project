@@ -149,7 +149,7 @@
                     <div class="col-lg-4 me-auto"><p class="lead">회원관리 기능에서는 회원가입, 이메일 인증, 로그인, 개인정보변경, 회원탈퇴 등의 기능을 구현하였습니다.</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">현재 웹 호스팅은 AWS를 사용하여 ubuntu 환경에서 톰캣을 통해 배포하였습니다. DB는 MtSQL Workbench를 이용하여 외부에서 원격으로 관리하고 있습니다.</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead">자세한 소스코드 내용은 github.com/sshhhGit/Spring_Legacy_Project에서 확인해 보실 수 있습니다.</p></div>
-               <!-- <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div> -->
+                    <div class="col-lg-4 me-auto"><p class="lead"></p></div>
                 </div>
                 <!-- About Section Button-->
 <!--                 <div class="text-center mt-4">
