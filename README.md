@@ -1,4 +1,4 @@
-# Spring legacy MVC Project TheCoffee
+# 스프링 레거시 MVC 프로젝트
 
 ### 개발환경
 - 개발 툴 : Eclipse Luna
