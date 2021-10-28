@@ -6,7 +6,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
 		<property name="driver" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/thecoffee" />
+		<property name="url" value="jdbc:mysql://localhost:3306/thecoffee?autoReconnection=true" />
 		<property name="username" value="root" />
 		<property name="password" value="12345" />
 	</bean>
