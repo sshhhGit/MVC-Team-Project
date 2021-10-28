@@ -1,7 +1,8 @@
 # 스프링 레거시 MVC 프로젝트
 
-![image](https://user-images.githubusercontent.com/83917282/139082749-02ba0446-ed7e-49c9-98bb-3106aa96b521.png)
+![image](https://user-images.githubusercontent.com/83917282/139224295-6d3408c4-76cf-4c18-9de9-7c2fead5cc36.png)
 
+![image](https://user-images.githubusercontent.com/83917282/139224427-a5d1a8a5-65bd-43cc-aae1-3dc1868c53a8.png)
 
 ### 개발환경
 - 개발 툴 : Eclipse Luna
