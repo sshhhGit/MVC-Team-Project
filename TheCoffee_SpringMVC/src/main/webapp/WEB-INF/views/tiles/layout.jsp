@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>layout.jsp</title>
+<title>TheCoffee</title>
 <style type="text/css">
 body {
 	margin: 0px;
