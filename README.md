@@ -2,6 +2,8 @@
 
 ![image](https://user-images.githubusercontent.com/83917282/139224295-6d3408c4-76cf-4c18-9de9-7c2fead5cc36.png)
 
+![image](https://user-images.githubusercontent.com/83917282/141476367-55e4a9f8-cef4-49e1-8890-9fb7e25ce60b.png)
+
 ![image](https://user-images.githubusercontent.com/83917282/139224427-a5d1a8a5-65bd-43cc-aae1-3dc1868c53a8.png)
 
 ### 개발환경
