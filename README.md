@@ -24,4 +24,4 @@
 6. 관리자 권한(admin/1234) 상품등록, 공지사항 Q&A 답변, FAQ 작성 및 회원 탈퇴 복구
 
 ### 포트폴리오 소개 페이지
-- http://52.79.178.150:8080/TheCoffee_SpringMVC/
+- http://seungho.ga/TheCoffee/
